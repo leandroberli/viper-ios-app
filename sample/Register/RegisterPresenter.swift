@@ -7,24 +7,15 @@
 
 import Foundation
 
-protocol RegisterPresenterProtocol {
-    var interactor: RegisterInteractorProtocol? { get set }
-    var view: RegisterViewProtocol? { get set }
-    var router: RegisterRouterProtocol? { get set }
-    
-    func didFinishRegisterRequest(with resutl: Result<Any,Error>)
-    func sendNewRegisterRequest(email: String, password: String)
-}
-
 class RegisterPresenter: RegisterPresenterProtocol {
     var interactor: RegisterInteractorProtocol?
     var view: RegisterViewProtocol?
     var router: RegisterRouterProtocol?
     
-    //Do things in the view controller
+    //Callback for register request from interactor
     func didFinishRegisterRequest(with result: Result<Any, Error>) {
         switch result {
-        case .success(let success):
+        case .success(_):
             print("Register success")
             view?.registerSuccess()
         case .failure(let failure):
@@ -33,7 +24,12 @@ class RegisterPresenter: RegisterPresenterProtocol {
         }
     }
     
+    //Start new register flow
     func sendNewRegisterRequest(email: String, password: String) {
         interactor?.registerNewUser(withEmail: email, password: password)
+    }
+    
+    func showSimpleNativeAlert(message: String?, title: String?) {
+        router?.showSimpleNativeAlert(with: message, title: title)
     }
 }

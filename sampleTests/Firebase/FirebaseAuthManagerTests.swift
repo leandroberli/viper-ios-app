@@ -17,11 +17,11 @@ final class FirebaseAuthManagerTests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
-        
+        sut = nil
     }
     
-    func testCreateNewUser_Success() throws {
-        let expectation = self.expectation(description: "Expect sucessfull user creation")
+    func testSuccessNewUserCreation_shouldResponseUserData() throws {
+        let expectation = self.expectation(description: "Expect user data")
         
         let name = randomString(length: 8)
         sut.createUser(withEmail: "\(name)@gmail.com", password: "123123") { user, error in
@@ -32,8 +32,8 @@ final class FirebaseAuthManagerTests: XCTestCase {
         self.wait(for: [expectation], timeout: 5)
     }
     
-    func testCreateNewUser_GivenUsedEmail_shouldFail() throws {
-        let expectation = self.expectation(description: "Expect failed user creation")
+    func testCreateNewUser_GivenUsedEmail_shouldReturnError() throws {
+        let expectation = self.expectation(description: "Expect error when try user creation")
         
         sut.createUser(withEmail: "leandroberli@gmail.com", password: "123123") { user, error in
             XCTAssertNotNil(error)

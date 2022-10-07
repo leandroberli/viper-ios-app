@@ -29,6 +29,6 @@ class MockRegisterPresenter: RegisterPresenterProtocol {
     }
     
     func sendNewRegisterRequest(email: String, password: String) {
-        
+        //TODO
     }
 }

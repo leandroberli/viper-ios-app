@@ -7,13 +7,6 @@
 
 import Foundation
 
-protocol RegisterInteractorProtocol {
-    var presenter: RegisterPresenterProtocol? { get set }
-    var firebaseAuth: FirebaseAuthProtocol? { get set }
-
-    func registerNewUser(withEmail: String, password: String)
-}
-
 class RegisterInteractor: RegisterInteractorProtocol {
     
     var firebaseAuth: FirebaseAuthProtocol?
