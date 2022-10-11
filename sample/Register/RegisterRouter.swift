@@ -22,11 +22,10 @@ class RegisterRouter: RegisterRouterProtocol {
     init() {
         let registerView = RegisterViewController()
         var interactor: RegisterInteractorProtocol = RegisterInteractor(authManager: FirebaseAuthManager())
-        var presenter: RegisterPresenterProtocol = RegisterPresenter()
+        let validator = RegisterDataValidator()
         
-        presenter.router = self
-        presenter.interactor = interactor
-        presenter.view = registerView
+        var presenter: RegisterPresenterProtocol = RegisterPresenter(interactor: interactor, view: registerView, router: self, dataValidator: validator)
+        
         interactor.presenter = presenter
         registerView.presenter = presenter
         

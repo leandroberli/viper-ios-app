@@ -29,6 +29,8 @@
 		9AB7CB0228F05A5A00C2F47A /* RegisterPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7CB0128F05A5A00C2F47A /* RegisterPresenterProtocol.swift */; };
 		9AB7CB0428F05AC200C2F47A /* RegisterInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7CB0328F05AC200C2F47A /* RegisterInteractorProtocol.swift */; };
 		9AB7CB0628F05AEE00C2F47A /* RegisterViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7CB0528F05AEE00C2F47A /* RegisterViewProtocol.swift */; };
+		9AB7CB0928F0802200C2F47A /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7CB0828F0802200C2F47A /* RegisterButton.swift */; };
+		9AD9C34528F5B0C500CEE4ED /* RegisterDataValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9C34428F5B0C500CEE4ED /* RegisterDataValidator.swift */; };
 		E01085AEA8ECCDD46425FF47 /* Pods_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9756AAE6E019706BCFC6AEC3 /* Pods_sample.framework */; };
 		E1FB77CE0D631B6EA25165BB /* Pods_sample_sampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D1C89E283BF3C406450614 /* Pods_sample_sampleUITests.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +82,8 @@
 		9AB7CB0128F05A5A00C2F47A /* RegisterPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenterProtocol.swift; sourceTree = "<group>"; };
 		9AB7CB0328F05AC200C2F47A /* RegisterInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractorProtocol.swift; sourceTree = "<group>"; };
 		9AB7CB0528F05AEE00C2F47A /* RegisterViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewProtocol.swift; sourceTree = "<group>"; };
+		9AB7CB0828F0802200C2F47A /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
+		9AD9C34428F5B0C500CEE4ED /* RegisterDataValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDataValidator.swift; sourceTree = "<group>"; };
 		A65FC8D132205B508771C378 /* Pods-sampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleTests.debug.xcconfig"; path = "Target Support Files/Pods-sampleTests/Pods-sampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A6E906298DCBFC7DFC28D698 /* Pods_sampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A94E2F6E8BC377B9F165E9B9 /* Pods-sampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleTests.release.xcconfig"; path = "Target Support Files/Pods-sampleTests/Pods-sampleTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 		9A9C30A928EE081A00015B19 /* sample */ = {
 			isa = PBXGroup;
 			children = (
+				9AB7CB0728F0800000C2F47A /* Common */,
 				9AA14FB528EEFCDE006A3BDF /* Login */,
 				9AA14FB428EEFCD8006A3BDF /* Home */,
 				9AA14FA628EE4BB3006A3BDF /* Firebase */,
@@ -183,6 +188,7 @@
 				9A9C30ED28EE2D3400015B19 /* RegisterPresenter.swift */,
 				9AB7CB0128F05A5A00C2F47A /* RegisterPresenterProtocol.swift */,
 				9A9C30EF28EE2D5100015B19 /* RegisterRouter.swift */,
+				9AD9C34428F5B0C500CEE4ED /* RegisterDataValidator.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -226,6 +232,14 @@
 			children = (
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		9AB7CB0728F0800000C2F47A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9AB7CB0828F0802200C2F47A /* RegisterButton.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		C4471A55873DCF281DA54699 /* Frameworks */ = {
@@ -494,12 +508,14 @@
 				9A9C30EC28EE2D2200015B19 /* RegisterInteractor.swift in Sources */,
 				9AB7CB0228F05A5A00C2F47A /* RegisterPresenterProtocol.swift in Sources */,
 				9A9C30F028EE2D5100015B19 /* RegisterRouter.swift in Sources */,
+				9AD9C34528F5B0C500CEE4ED /* RegisterDataValidator.swift in Sources */,
 				9AB7CB0428F05AC200C2F47A /* RegisterInteractorProtocol.swift in Sources */,
 				9A9C30E928EE2D1500015B19 /* RegisterViewController.swift in Sources */,
 				9AA14FA828EE4BDC006A3BDF /* FirebaseAuthManager.swift in Sources */,
 				9A9C30EE28EE2D3400015B19 /* RegisterPresenter.swift in Sources */,
 				9AB7CB0628F05AEE00C2F47A /* RegisterViewProtocol.swift in Sources */,
 				9A9C30AB28EE081A00015B19 /* AppDelegate.swift in Sources */,
+				9AB7CB0928F0802200C2F47A /* RegisterButton.swift in Sources */,
 				9A9C30AD28EE081A00015B19 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

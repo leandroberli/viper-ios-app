@@ -14,5 +14,5 @@ protocol RegisterPresenterProtocol {
     
     func didFinishRegisterRequest(with resutl: Result<Any,Error>)
     func sendNewRegisterRequest(email: String, password: String)
-    func showSimpleNativeAlert(message: String?, title: String?)
+    func isDataProvidedValid(email: String, password: String) -> Bool
 }

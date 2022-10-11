@@ -11,6 +11,14 @@ import Foundation
 import XCTest
 
 class MockRegisterPresenter: RegisterPresenterProtocol {
+    func showSimpleNativeAlert(message: String?, title: String?) {
+        
+    }
+    
+    func isDataProvidedValid(email: String, password: String) -> Bool {
+        return true
+    }
+    
     var interactor: sample.RegisterInteractorProtocol?
     var view: sample.RegisterViewProtocol?
     var router: sample.RegisterRouterProtocol?

@@ -11,25 +11,46 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
     
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
-    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var registerButton: RegisterButton!
     
     var presenter: RegisterPresenterProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerButton.changeDisabled()
+        passwordTextfield.isSecureTextEntry = true
     }
     
     func registerSuccess() {
-        presenter?.showSimpleNativeAlert(message: "Register success", title: "Created")
+        presenter?.router?.showSimpleNativeAlert(with: "Register success", title: "Created")
     }
     
     func registerFailed(messagge: String) {
-        presenter?.showSimpleNativeAlert(message: messagge, title: "Register failed")
+        presenter?.router?.showSimpleNativeAlert(with: messagge, title: "Register failed")
     }
     
-    
     @IBAction func registerButtonAction(_ sender: Any) {
-        self.presenter?.sendNewRegisterRequest(email: emailTextfield.text ?? "" , password: "123123")
+        let email = emailTextfield.text ?? ""
+        let password = passwordTextfield.text ?? ""
+        if self.presenter?.isDataProvidedValid(email: email, password: password) ?? false {
+            self.presenter?.sendNewRegisterRequest(email: email , password: password)
+        }
+    }
+    
+    @IBAction func emailTextfieldDidChange(_ sender: UITextField) {
+        handleRegisterButtonState()
+    }
+    
+    @IBAction func passwordTextfieldDidChange(_ sender: UITextField) {
+        handleRegisterButtonState()
+    }
+    
+    private func handleRegisterButtonState() {
+        if (emailTextfield.text?.isEmpty ?? true) || (passwordTextfield.text?.isEmpty ?? true) {
+            registerButton.changeDisabled()
+        } else {
+            registerButton.changeEnabled()
+        }
     }
 }
 
