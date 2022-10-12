@@ -23,10 +23,26 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTable()
+        addSwipeForSidemenuGesture()
+        showActivityIndicator()
+        presenter?.getApods()
+    }
+    
+    private func setupTable() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "HomePostTableViewCell", bundle: nil), forCellReuseIdentifier: "HomePostTableViewCell")
-        presenter?.getApods()
+    }
+    
+    private func addSwipeForSidemenuGesture() {
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(didSwipeForMenu(_:)))
+        gesture.direction = .right
+        self.view.addGestureRecognizer(gesture)
+    }
+    
+    @objc func didSwipeForMenu(_ sender: UISwipeGestureRecognizer) {
+        presenter?.showSideMenu()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,12 +53,13 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     func refreshTable(withPosts: [Post]) {
         self.posts = withPosts
         DispatchQueue.main.async {
+            self.removeActivityIndicator()
             self.tableView.reloadData()
         }
     }
 
-    @IBAction func logoutAction(_ sender: Any) {
-        FirebaseAuthManager().logoutUser()
+    @IBAction func sideMenuAction(_ sender: Any) {
+        presenter?.showSideMenu()
     }
 }
 

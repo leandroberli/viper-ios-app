@@ -44,6 +44,7 @@ class LoginRouter: LoginRouterProtocol {
         let homeViewController = HomeViewController()
         let interactor = HomeInteractor(httpClient: ApodHTTPClient())
         let router = HomeRouter()
+        router.entry = homeViewController
         
         let presenter = HomePresenter(view: homeViewController, interactor: interactor, router: router)
         

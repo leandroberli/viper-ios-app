@@ -8,6 +8,7 @@ target 'sample' do
   # Pods for sample
   pod 'FirebaseAuth'
   pod 'Kingfisher'
+  pod 'SideMenu'
 
   target 'sampleTests' do
     inherit! :search_paths

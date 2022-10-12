@@ -15,4 +15,19 @@ extension UIViewController {
         alert.addAction(action)
         self.present(alert, animated: true)
     }
+    
+    func showActivityIndicator() {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.startAnimating()
+        indicator.accessibilityIdentifier = "indicator"
+        indicator.center = self.view.center
+        self.view.addSubview(indicator)
+    }
+    
+    func removeActivityIndicator() {
+        if let indicator = self.view.subviews.first(where: { $0.accessibilityIdentifier == "indicator" }) {
+            indicator.removeFromSuperview()
+        }
+    }
+    
 }

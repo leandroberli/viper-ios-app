@@ -20,16 +20,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkJ-dh-Ohk">
-                    <rect key="frame" x="10" y="57" width="48" height="35"/>
+                    <rect key="frame" x="10" y="10" width="48" height="35"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="person" catalog="system"/>
                     <connections>
-                        <action selector="logoutAction:" destination="-1" eventType="touchUpInside" id="j2K-4s-z9Y"/>
+                        <action selector="sideMenuAction:" destination="-1" eventType="touchUpInside" id="Mi8-xg-aSh"/>
                     </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="p1y-zC-wfa">
-                    <rect key="frame" x="0.0" y="91" width="390" height="719"/>
+                    <rect key="frame" x="0.0" y="44" width="390" height="800"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>

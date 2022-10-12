@@ -13,6 +13,7 @@ protocol HomePresenterProtocol {
     var router: HomeRouterProtocol? { get set }
     
     func getApods()
+    func showSideMenu()
 }
 
 class HomePresenter: HomePresenterProtocol {
@@ -30,5 +31,9 @@ class HomePresenter: HomePresenterProtocol {
         interactor?.getApods { posts, error in
             self.view?.refreshTable(withPosts: posts ?? [])
         }
+    }
+    
+    func showSideMenu() {
+        router?.showSideMenu()
     }
 }
