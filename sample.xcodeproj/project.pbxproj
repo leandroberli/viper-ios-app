@@ -9,6 +9,20 @@
 /* Begin PBXBuildFile section */
 		3BF5A448C2D320F0E5564BF8 /* Pods_sampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E906298DCBFC7DFC28D698 /* Pods_sampleTests.framework */; };
 		9A3319AE28EE49CC00617232 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A3319AD28EE49CB00617232 /* GoogleService-Info.plist */; };
+		9A749F8928F5FD5900D06253 /* RegisterRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749F8828F5FD5900D06253 /* RegisterRouterProtocol.swift */; };
+		9A749F8E28F5FE8E00D06253 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749F8C28F5FE8E00D06253 /* EmailLoginViewController.swift */; };
+		9A749F8F28F5FE8E00D06253 /* EmailLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A749F8D28F5FE8E00D06253 /* EmailLoginViewController.xib */; };
+		9A749F9328F5FF7900D06253 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749F9128F5FF7900D06253 /* SplashViewController.swift */; };
+		9A749F9428F5FF7900D06253 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A749F9228F5FF7900D06253 /* SplashViewController.xib */; };
+		9A749F9628F6003F00D06253 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749F9528F6003F00D06253 /* SplashRouter.swift */; };
+		9A749F9828F6076C00D06253 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749F9728F6076C00D06253 /* SplashPresenter.swift */; };
+		9A749F9A28F607CB00D06253 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749F9928F607CB00D06253 /* SplashInteractor.swift */; };
+		9A749F9D28F639DA00D06253 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749F9B28F639DA00D06253 /* HomeViewController.swift */; };
+		9A749F9E28F639DA00D06253 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A749F9C28F639DA00D06253 /* HomeViewController.xib */; };
+		9A749FA028F6EEA800D06253 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749F9F28F6EEA800D06253 /* LoginPresenter.swift */; };
+		9A749FA228F6EEB300D06253 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FA128F6EEB300D06253 /* LoginInteractor.swift */; };
+		9A749FA428F6F2FE00D06253 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FA328F6F2FE00D06253 /* LoginRouter.swift */; };
+		9A749FA628F6F5E500D06253 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FA528F6F5E500D06253 /* UIViewController+Extension.swift */; };
 		9A9C30AB28EE081A00015B19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C30AA28EE081A00015B19 /* AppDelegate.swift */; };
 		9A9C30AD28EE081A00015B19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C30AC28EE081A00015B19 /* SceneDelegate.swift */; };
 		9A9C30B428EE081B00015B19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A9C30B328EE081B00015B19 /* Assets.xcassets */; };
@@ -58,6 +72,20 @@
 		58D1C89E283BF3C406450614 /* Pods_sample_sampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sample_sampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9756AAE6E019706BCFC6AEC3 /* Pods_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3319AD28EE49CB00617232 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9A749F8828F5FD5900D06253 /* RegisterRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouterProtocol.swift; sourceTree = "<group>"; };
+		9A749F8C28F5FE8E00D06253 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
+		9A749F8D28F5FE8E00D06253 /* EmailLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailLoginViewController.xib; sourceTree = "<group>"; };
+		9A749F9128F5FF7900D06253 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		9A749F9228F5FF7900D06253 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		9A749F9528F6003F00D06253 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
+		9A749F9728F6076C00D06253 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		9A749F9928F607CB00D06253 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
+		9A749F9B28F639DA00D06253 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9A749F9C28F639DA00D06253 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		9A749F9F28F6EEA800D06253 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		9A749FA128F6EEB300D06253 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		9A749FA328F6F2FE00D06253 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		9A749FA528F6F5E500D06253 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		9A9C30A728EE081A00015B19 /* sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9C30AA28EE081A00015B19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A9C30AC28EE081A00015B19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +147,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A749F8228F5F90000D06253 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9A749F8328F5FCEE00D06253 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A9C30E728EE2D1500015B19 /* RegisterViewController.swift */,
+				9A9C30E828EE2D1500015B19 /* RegisterViewController.xib */,
+				9AB7CB0528F05AEE00C2F47A /* RegisterViewProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A749F8428F5FD0200D06253 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				9A9C30EB28EE2D2200015B19 /* RegisterInteractor.swift */,
+				9AB7CB0328F05AC200C2F47A /* RegisterInteractorProtocol.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		9A749F8528F5FD1300D06253 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9A9C30ED28EE2D3400015B19 /* RegisterPresenter.swift */,
+				9AB7CB0128F05A5A00C2F47A /* RegisterPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9A749F8628F5FD3100D06253 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				9AD9C34428F5B0C500CEE4ED /* RegisterDataValidator.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		9A749F8728F5FD4000D06253 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				9A9C30EF28EE2D5100015B19 /* RegisterRouter.swift */,
+				9A749F8828F5FD5900D06253 /* RegisterRouterProtocol.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		9A749F8A28F5FE4500D06253 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9A749F9028F5FF5D00D06253 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				9A749F9128F5FF7900D06253 /* SplashViewController.swift */,
+				9A749F9228F5FF7900D06253 /* SplashViewController.xib */,
+				9A749F9528F6003F00D06253 /* SplashRouter.swift */,
+				9A749F9728F6076C00D06253 /* SplashPresenter.swift */,
+				9A749F9928F607CB00D06253 /* SplashInteractor.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		9A9C309E28EE081A00015B19 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				9AB7CB0728F0800000C2F47A /* Common */,
+				9A749F9028F5FF5D00D06253 /* Splash */,
 				9AA14FB528EEFCDE006A3BDF /* Login */,
 				9AA14FB428EEFCD8006A3BDF /* Home */,
 				9AA14FA628EE4BB3006A3BDF /* Firebase */,
@@ -162,6 +262,8 @@
 		9A9C30C028EE081B00015B19 /* sampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				9A749F8A28F5FE4500D06253 /* Login */,
+				9A749F8228F5F90000D06253 /* Home */,
 				9AA14FA928EE56B1006A3BDF /* Firebase */,
 				9A9C30E628EE2CE800015B19 /* Register */,
 			);
@@ -180,15 +282,11 @@
 		9A9C30E528EE2BF300015B19 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				9A9C30E728EE2D1500015B19 /* RegisterViewController.swift */,
-				9A9C30E828EE2D1500015B19 /* RegisterViewController.xib */,
-				9AB7CB0528F05AEE00C2F47A /* RegisterViewProtocol.swift */,
-				9A9C30EB28EE2D2200015B19 /* RegisterInteractor.swift */,
-				9AB7CB0328F05AC200C2F47A /* RegisterInteractorProtocol.swift */,
-				9A9C30ED28EE2D3400015B19 /* RegisterPresenter.swift */,
-				9AB7CB0128F05A5A00C2F47A /* RegisterPresenterProtocol.swift */,
-				9A9C30EF28EE2D5100015B19 /* RegisterRouter.swift */,
-				9AD9C34428F5B0C500CEE4ED /* RegisterDataValidator.swift */,
+				9A749F8728F5FD4000D06253 /* Router */,
+				9A749F8628F5FD3100D06253 /* Entities */,
+				9A749F8528F5FD1300D06253 /* Presenter */,
+				9A749F8428F5FD0200D06253 /* Interactor */,
+				9A749F8328F5FCEE00D06253 /* View */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -223,6 +321,8 @@
 		9AA14FB428EEFCD8006A3BDF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9A749F9B28F639DA00D06253 /* HomeViewController.swift */,
+				9A749F9C28F639DA00D06253 /* HomeViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -230,6 +330,11 @@
 		9AA14FB528EEFCDE006A3BDF /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				9A749F9F28F6EEA800D06253 /* LoginPresenter.swift */,
+				9A749FA128F6EEB300D06253 /* LoginInteractor.swift */,
+				9A749FA328F6F2FE00D06253 /* LoginRouter.swift */,
+				9A749F8C28F5FE8E00D06253 /* EmailLoginViewController.swift */,
+				9A749F8D28F5FE8E00D06253 /* EmailLoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -238,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				9AB7CB0828F0802200C2F47A /* RegisterButton.swift */,
+				9A749FA528F6F5E500D06253 /* UIViewController+Extension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -375,8 +481,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A9C30B728EE081B00015B19 /* LaunchScreen.storyboard in Resources */,
+				9A749F9428F5FF7900D06253 /* SplashViewController.xib in Resources */,
 				9A3319AE28EE49CC00617232 /* GoogleService-Info.plist in Resources */,
 				9A9C30B428EE081B00015B19 /* Assets.xcassets in Resources */,
+				9A749F8F28F5FE8E00D06253 /* EmailLoginViewController.xib in Resources */,
+				9A749F9E28F639DA00D06253 /* HomeViewController.xib in Resources */,
 				9A9C30EA28EE2D1500015B19 /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,13 +614,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A749F8928F5FD5900D06253 /* RegisterRouterProtocol.swift in Sources */,
+				9A749F8E28F5FE8E00D06253 /* EmailLoginViewController.swift in Sources */,
+				9A749FA228F6EEB300D06253 /* LoginInteractor.swift in Sources */,
+				9A749F9D28F639DA00D06253 /* HomeViewController.swift in Sources */,
 				9A9C30EC28EE2D2200015B19 /* RegisterInteractor.swift in Sources */,
+				9A749FA028F6EEA800D06253 /* LoginPresenter.swift in Sources */,
 				9AB7CB0228F05A5A00C2F47A /* RegisterPresenterProtocol.swift in Sources */,
+				9A749FA628F6F5E500D06253 /* UIViewController+Extension.swift in Sources */,
 				9A9C30F028EE2D5100015B19 /* RegisterRouter.swift in Sources */,
+				9A749FA428F6F2FE00D06253 /* LoginRouter.swift in Sources */,
 				9AD9C34528F5B0C500CEE4ED /* RegisterDataValidator.swift in Sources */,
 				9AB7CB0428F05AC200C2F47A /* RegisterInteractorProtocol.swift in Sources */,
+				9A749F9A28F607CB00D06253 /* SplashInteractor.swift in Sources */,
 				9A9C30E928EE2D1500015B19 /* RegisterViewController.swift in Sources */,
 				9AA14FA828EE4BDC006A3BDF /* FirebaseAuthManager.swift in Sources */,
+				9A749F9628F6003F00D06253 /* SplashRouter.swift in Sources */,
+				9A749F9328F5FF7900D06253 /* SplashViewController.swift in Sources */,
+				9A749F9828F6076C00D06253 /* SplashPresenter.swift in Sources */,
 				9A9C30EE28EE2D3400015B19 /* RegisterPresenter.swift in Sources */,
 				9AB7CB0628F05AEE00C2F47A /* RegisterViewProtocol.swift in Sources */,
 				9A9C30AB28EE081A00015B19 /* AppDelegate.swift in Sources */,

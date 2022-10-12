@@ -14,12 +14,43 @@ enum FirebaseAuthError: Error {
 
 protocol FirebaseAuthProtocol {
     func createUser(withEmail: String, password: String, completion: @escaping (User?, Error?) -> Void)
+    func getAuthentincathedUser() -> User?
+    func authenticateUser(withEmail: String, password: String, completion: @escaping (User?,Error?) -> Void)
+    func logoutUser()
 }
 
 class FirebaseAuthManager: FirebaseAuthProtocol {
     
+    func logoutUser() {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+    }
+    
+    func authenticateUser(withEmail: String, password: String, completion: @escaping (User?, Error?) -> Void) {
+        Auth.auth().signIn(withEmail: withEmail, password: password) { authData, error in
+            if let err = error {
+                completion(nil,err)
+                return
+            }
+            completion(authData?.user, nil)
+        }
+    }
+    
+    
+    func getAuthentincathedUser() -> User? {
+        print(#function)
+        if let user = Auth.auth().currentUser {
+          return user
+        } else {
+          return nil
+        }
+    }
+    
     func createUser(withEmail: String, password: String, completion: @escaping (User?, Error?) -> Void) {
-        
         Auth.auth().createUser(withEmail: withEmail, password: password) { authResult, error in
             if let err = error {
                 completion(nil,err)
@@ -29,8 +60,5 @@ class FirebaseAuthManager: FirebaseAuthProtocol {
                 completion(user, nil)
             }
         }
-        
     }
-    
-    
 }

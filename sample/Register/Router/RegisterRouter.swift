@@ -10,12 +10,6 @@ import UIKit
 
 typealias EntryPoint = RegisterViewProtocol & UIViewController
 
-protocol RegisterRouterProtocol {
-    var entry: EntryPoint? { get }
-
-    func showSimpleNativeAlert(with messagge: String?, title: String?)
-}
-
 class RegisterRouter: RegisterRouterProtocol {
     var entry: EntryPoint?
     
@@ -24,7 +18,7 @@ class RegisterRouter: RegisterRouterProtocol {
         var interactor: RegisterInteractorProtocol = RegisterInteractor(authManager: FirebaseAuthManager())
         let validator = RegisterDataValidator()
         
-        var presenter: RegisterPresenterProtocol = RegisterPresenter(interactor: interactor, view: registerView, router: self, dataValidator: validator)
+        let presenter: RegisterPresenterProtocol = RegisterPresenter(interactor: interactor, view: registerView, router: self, dataValidator: validator)
         
         interactor.presenter = presenter
         registerView.presenter = presenter

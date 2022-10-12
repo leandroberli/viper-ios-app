@@ -8,8 +8,7 @@
 import Foundation
 import UIKit
 
-class RegisterButton: UIButton {
-    
+class BaseFormButton: UIButton {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -19,11 +18,8 @@ class RegisterButton: UIButton {
         self.backgroundColor = UIColor.blue
         
         self.setTitleColor(UIColor.white, for: .normal)
-        self.setTitle("Register", for: .normal)
-        self.setTitle("Register", for: .highlighted)
-        self.setTitle("Register", for: .selected)
         
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         self.clipsToBounds = true
     }
     
@@ -35,5 +31,32 @@ class RegisterButton: UIButton {
     func changeEnabled() {
         self.backgroundColor = .blue
         self.isEnabled = true
+    }
+}
+
+class RegisterButton: BaseFormButton {
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setTitle("Register", for: .normal)
+        self.setTitle("Register", for: .highlighted)
+        self.setTitle("Register", for: .selected)
+    }
+}
+
+class LoginButton: BaseFormButton {
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setTitle("Login", for: .normal)
+        self.setTitle("Login", for: .highlighted)
+        self.setTitle("Login", for: .selected)
     }
 }

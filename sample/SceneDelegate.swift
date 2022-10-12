@@ -13,7 +13,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
-        self.window = initWithRegister(scene: scene)
+        self.window = initSplashScreen(scene: scene)
+    }
+    
+    private func initSplashScreen(scene: UIWindowScene) -> UIWindow {
+        let router = SplashRouter()
+        let window = UIWindow(windowScene: scene)
+        window.rootViewController = router.entry
+        window.makeKeyAndVisible()
+        return window
     }
     
     private func initWithRegister(scene: UIWindowScene) -> UIWindow {
