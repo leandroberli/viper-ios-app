@@ -41,7 +41,14 @@ class LoginRouter: LoginRouterProtocol {
     }
     
     func showHomeScreen() {
-        let vc = HomeViewController()
-        self.entry?.navigationController?.pushViewController(vc, animated: false)
+        let homeViewController = HomeViewController()
+        let interactor = HomeInteractor(httpClient: ApodHTTPClient())
+        let router = HomeRouter()
+        
+        let presenter = HomePresenter(view: homeViewController, interactor: interactor, router: router)
+        
+        homeViewController.presenter = presenter
+        
+        entry?.navigationController?.pushViewController(homeViewController, animated: false)
     }
 }

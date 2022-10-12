@@ -6,7 +6,8 @@ target 'sample' do
   use_frameworks!
 
   # Pods for sample
-pod 'FirebaseAuth'
+  pod 'FirebaseAuth'
+  pod 'Kingfisher'
 
   target 'sampleTests' do
     inherit! :search_paths

@@ -40,6 +40,13 @@ class SplashRouter: SplashRouterProtocol {
     
     func showHomeScreen() {
         let homeViewController = HomeViewController()
+        let interactor = HomeInteractor(httpClient: ApodHTTPClient())
+        let router = HomeRouter()
+        
+        let presenter = HomePresenter(view: homeViewController, interactor: interactor, router: router)
+        
+        homeViewController.presenter = presenter
+        
         entry?.pushViewController(homeViewController, animated: false)
     }
 }

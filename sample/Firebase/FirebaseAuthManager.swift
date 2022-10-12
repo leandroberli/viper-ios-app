@@ -42,7 +42,6 @@ class FirebaseAuthManager: FirebaseAuthProtocol {
     
     
     func getAuthentincathedUser() -> User? {
-        print(#function)
         if let user = Auth.auth().currentUser {
           return user
         } else {
