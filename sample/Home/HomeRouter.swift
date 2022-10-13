@@ -25,6 +25,7 @@ class HomeRouter: HomeRouterProtocol {
         let router = SideMenuRouter(entry: vc)
         
         let presenter = SideMenuPresenter(view: vc, router: router)
+        presenter.homeView = entry
         vc.presenter = presenter
         
         entry?.present(menu, animated: true)

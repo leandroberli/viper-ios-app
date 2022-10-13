@@ -18,10 +18,20 @@ class SideMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
+        userImage.layer.borderWidth = 1.5
+        userImage.layer.borderColor = UIColor.systemMint.cgColor
+        presenter?.getUserProfileImage()
+    }
+    
+    //Update profile photo. Called from presenter
+    public func updateUserProfileImage(_ image: UIImage) {
+        DispatchQueue.main.async {
+            self.userImage.image = image
+        }
     }
 
     @IBAction func editProfileAction(_ sender: Any) {
-        
+        presenter?.didSelectEditProfile()
     }
     
     @IBAction func logoutAction(_ sender: Any) {

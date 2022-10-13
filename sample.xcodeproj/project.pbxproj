@@ -38,6 +38,7 @@
 		9A749FC428F84DF600D06253 /* ApodDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A749FC228F84DF600D06253 /* ApodDetailViewController.xib */; };
 		9A749FC628F84FA500D06253 /* ApodDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FC528F84FA500D06253 /* ApodDetailPresenter.swift */; };
 		9A749FC928F8603F00D06253 /* Textfields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FC828F8603F00D06253 /* Textfields.swift */; };
+		9A749FCB28F8898F00D06253 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FCA28F8898F00D06253 /* StorageManager.swift */; };
 		9A9C30AB28EE081A00015B19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C30AA28EE081A00015B19 /* AppDelegate.swift */; };
 		9A9C30AD28EE081A00015B19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C30AC28EE081A00015B19 /* SceneDelegate.swift */; };
 		9A9C30B428EE081B00015B19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A9C30B328EE081B00015B19 /* Assets.xcassets */; };
@@ -116,6 +117,7 @@
 		9A749FC228F84DF600D06253 /* ApodDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApodDetailViewController.xib; sourceTree = "<group>"; };
 		9A749FC528F84FA500D06253 /* ApodDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodDetailPresenter.swift; sourceTree = "<group>"; };
 		9A749FC828F8603F00D06253 /* Textfields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textfields.swift; sourceTree = "<group>"; };
+		9A749FCA28F8898F00D06253 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		9A9C30A728EE081A00015B19 /* sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9C30AA28EE081A00015B19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A9C30AC28EE081A00015B19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				9AA14FA728EE4BDC006A3BDF /* FirebaseAuthManager.swift */,
+				9A749FCA28F8898F00D06253 /* StorageManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -705,6 +708,7 @@
 				9A749F8928F5FD5900D06253 /* RegisterRouterProtocol.swift in Sources */,
 				9A749F8E28F5FE8E00D06253 /* EmailLoginViewController.swift in Sources */,
 				9A749FB428F7410B00D06253 /* HomePostTableViewCell.swift in Sources */,
+				9A749FCB28F8898F00D06253 /* StorageManager.swift in Sources */,
 				9A749FA228F6EEB300D06253 /* LoginInteractor.swift in Sources */,
 				9A749FC928F8603F00D06253 /* Textfields.swift in Sources */,
 				9A749F9D28F639DA00D06253 /* HomeViewController.swift in Sources */,

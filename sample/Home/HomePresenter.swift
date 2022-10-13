@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol HomePresenterProtocol {
     var view: HomeViewController? { get set }
@@ -13,6 +14,7 @@ protocol HomePresenterProtocol {
     var router: HomeRouterProtocol? { get set }
     
     func getApods()
+    func getUserProfileImage()
     func showSideMenu()
     func didSelectItem(_ post: Post)
 }
@@ -28,9 +30,24 @@ class HomePresenter: HomePresenterProtocol {
         self.router = router
     }
     
+    //Get table items and update view.
     func getApods() {
         interactor?.getApods { posts, error in
             self.view?.refreshTable(withPosts: posts ?? [])
+        }
+    }
+    
+    //Get user profile image and update view.
+    func getUserProfileImage() {
+        guard let currentUser = FirebaseAuthManager().getAuthentincathedUser() else {
+            return
+        }
+        interactor?.getUserProfileImage(withId: currentUser.uid) { image in
+            DispatchQueue.main.async {
+                if let img = image {
+                    self.view?.updateUserProfileImage(image: img)
+                }
+            }
         }
     }
     

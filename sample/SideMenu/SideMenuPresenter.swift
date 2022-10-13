@@ -14,10 +14,13 @@ protocol SideMenuPresenterProtocol {
     
     func didSelectEditProfile()
     func didSelectLogOut()
+    func didReceivedProfileImage(_ image: UIImage)
 }
 
-class SideMenuPresenter: SideMenuPresenterProtocol {
+class SideMenuPresenter: NSObject, SideMenuPresenterProtocol {
+    
     var view: SideMenuViewController?
+    var homeView: HomeViewController?
     var router: SideMenuRouter?
     
     init(view: SideMenuViewController?, router: SideMenuRouter?) {
@@ -25,8 +28,22 @@ class SideMenuPresenter: SideMenuPresenterProtocol {
         self.router = router
     }
     
+    //Get user profile image and update view.
+    func getUserProfileImage() {
+        guard let user = FirebaseAuthManager().getAuthentincathedUser() else {
+            return
+        }
+        StorageManager().getImageProfilePhotoUser(withId: user.uid) { image, error in
+            if let img = image {
+                DispatchQueue.main.async {
+                    self.view?.updateUserProfileImage(img)
+                }
+            }
+        }
+    }
+    
     func didSelectEditProfile() {
-        //TODO: something.
+        router?.initImagePickerViewController(delegate: self)
     }
     
     func didSelectLogOut() {
@@ -36,5 +53,33 @@ class SideMenuPresenter: SideMenuPresenterProtocol {
     func startLogoutProcess() {
         FirebaseAuthManager().logoutUser()
         router?.startLogoutProcess()
+    }
+    
+    //Received image from picker, upload data and update views.
+    func didReceivedProfileImage(_ image: UIImage) {
+        startUploadProfileImageProcess(image)
+        view?.updateUserProfileImage(image)
+        homeView?.updateUserProfileImage(image: image)
+    }
+    
+    //Upload to firebase storage.
+    func startUploadProfileImageProcess(_ image: UIImage) {
+        guard let data = image.pngData(), let user = FirebaseAuthManager().getAuthentincathedUser() else {
+            return
+        }
+        StorageManager().uploadProfilePhotoForUser(withId: user.uid, data: data)
+    }
+}
+
+//MARK: Image picker delegate
+extension SideMenuPresenter: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let editedImage = info[.editedImage] as? UIImage else {
+            print("Error in: \(#function)")
+            return
+        }
+        self.didReceivedProfileImage(editedImage)
+        picker.dismiss(animated: true)
     }
 }

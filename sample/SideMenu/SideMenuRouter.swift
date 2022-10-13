@@ -14,7 +14,7 @@ protocol SideMenuRouterProtocol {
     func startLogoutProcess()
 }
 
-class SideMenuRouter: SideMenuRouterProtocol {
+class SideMenuRouter: NSObject, SideMenuRouterProtocol {
     var entry: SideMenuViewController?
     
     init(entry: SideMenuViewController?) {
@@ -28,5 +28,13 @@ class SideMenuRouter: SideMenuRouterProtocol {
         let router = SplashRouter()
         window.rootViewController = router.entry
         window.makeKeyAndVisible()
+    }
+    
+    func initImagePickerViewController(delegate: UIImagePickerControllerDelegate & UINavigationControllerDelegate) {
+        let picker = UIImagePickerController()
+        picker.delegate = delegate
+        picker.allowsEditing = true
+        picker.sourceType = .photoLibrary
+        self.entry?.present(picker, animated: true)
     }
 }

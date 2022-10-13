@@ -29,10 +29,12 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         showActivityIndicator()
         
         profileButton.backgroundColor = .black
-        profileButton.tintColor = .white
         profileButton.layer.cornerRadius = profileButton.frame.height / 2
+        profileButton.layer.borderWidth = 1
+        profileButton.layer.borderColor = UIColor.systemMint.cgColor
         
         presenter?.getApods()
+        presenter?.getUserProfileImage()
     }
     
     private func setupTable() {
@@ -63,6 +65,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     }
     
     override func viewDidLayoutSubviews() {
+        //This is for update shadow path from cells
         tableView.visibleCells.forEach({
             guard let cell = $0 as? HomePostTableViewCell else {
                 return
@@ -71,12 +74,18 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         })
     }
 
+    //Refresh data and table. Called from presenter
     func refreshTable(withPosts: [Post]) {
         self.posts = withPosts
         DispatchQueue.main.async {
             self.removeActivityIndicator()
             self.tableView.reloadData()
         }
+    }
+    
+    //Called from presenter
+    func updateUserProfileImage(image: UIImage) {
+        profileButton.setBackgroundImage(image, for: .normal)
     }
 
     @IBAction func sideMenuAction(_ sender: Any) {

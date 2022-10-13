@@ -7,6 +7,9 @@ target 'sample' do
 
   # Pods for sample
   pod 'FirebaseAuth'
+  pod 'FirebaseCore'
+  pod 'FirebaseFirestore'
+  pod 'FirebaseStorage'
   pod 'Kingfisher'
   pod 'SideMenu'
 
