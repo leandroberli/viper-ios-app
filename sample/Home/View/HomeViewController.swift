@@ -51,6 +51,11 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         self.navigationController?.isNavigationBarHidden = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     override func viewDidLayoutSubviews() {
         tableView.visibleCells.forEach({
             guard let cell = $0 as? HomePostTableViewCell else {
@@ -86,5 +91,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         cell.descLabel.text = post.explanation
         cell.postImage.kf.setImage(with: URL(string: post.url))
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = posts[indexPath.row]
+        self.presenter?.didSelectItem(post)
     }
 }

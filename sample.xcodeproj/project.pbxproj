@@ -34,6 +34,9 @@
 		9A749FBB28F74D2700D06253 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A749FB928F74D2700D06253 /* SideMenuViewController.xib */; };
 		9A749FBE28F8441300D06253 /* SideMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FBD28F8441300D06253 /* SideMenuPresenter.swift */; };
 		9A749FC028F8441F00D06253 /* SideMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FBF28F8441F00D06253 /* SideMenuRouter.swift */; };
+		9A749FC328F84DF600D06253 /* ApodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FC128F84DF600D06253 /* ApodDetailViewController.swift */; };
+		9A749FC428F84DF600D06253 /* ApodDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A749FC228F84DF600D06253 /* ApodDetailViewController.xib */; };
+		9A749FC628F84FA500D06253 /* ApodDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FC528F84FA500D06253 /* ApodDetailPresenter.swift */; };
 		9A9C30AB28EE081A00015B19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C30AA28EE081A00015B19 /* AppDelegate.swift */; };
 		9A9C30AD28EE081A00015B19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C30AC28EE081A00015B19 /* SceneDelegate.swift */; };
 		9A9C30B428EE081B00015B19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A9C30B328EE081B00015B19 /* Assets.xcassets */; };
@@ -108,6 +111,9 @@
 		9A749FB928F74D2700D06253 /* SideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		9A749FBD28F8441300D06253 /* SideMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuPresenter.swift; sourceTree = "<group>"; };
 		9A749FBF28F8441F00D06253 /* SideMenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRouter.swift; sourceTree = "<group>"; };
+		9A749FC128F84DF600D06253 /* ApodDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodDetailViewController.swift; sourceTree = "<group>"; };
+		9A749FC228F84DF600D06253 /* ApodDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApodDetailViewController.xib; sourceTree = "<group>"; };
+		9A749FC528F84FA500D06253 /* ApodDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodDetailPresenter.swift; sourceTree = "<group>"; };
 		9A9C30A728EE081A00015B19 /* sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9C30AA28EE081A00015B19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A9C30AC28EE081A00015B19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -243,10 +249,9 @@
 		9A749FB128F740E400D06253 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9A749FC728F858E100D06253 /* Cells */,
 				9A749F9B28F639DA00D06253 /* HomeViewController.swift */,
 				9A749F9C28F639DA00D06253 /* HomeViewController.xib */,
-				9A749FB228F7410B00D06253 /* HomePostTableViewCell.swift */,
-				9A749FB328F7410B00D06253 /* HomePostTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -273,8 +278,20 @@
 		9A749FBC28F7566600D06253 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				9A749FC128F84DF600D06253 /* ApodDetailViewController.swift */,
+				9A749FC228F84DF600D06253 /* ApodDetailViewController.xib */,
+				9A749FC528F84FA500D06253 /* ApodDetailPresenter.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		9A749FC728F858E100D06253 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9A749FB228F7410B00D06253 /* HomePostTableViewCell.swift */,
+				9A749FB328F7410B00D06253 /* HomePostTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		9A9C309E28EE081A00015B19 = {
@@ -550,6 +567,7 @@
 				9A3319AE28EE49CC00617232 /* GoogleService-Info.plist in Resources */,
 				9A9C30B428EE081B00015B19 /* Assets.xcassets in Resources */,
 				9A749FB528F7410B00D06253 /* HomePostTableViewCell.xib in Resources */,
+				9A749FC428F84DF600D06253 /* ApodDetailViewController.xib in Resources */,
 				9A749F8F28F5FE8E00D06253 /* EmailLoginViewController.xib in Resources */,
 				9A749F9E28F639DA00D06253 /* HomeViewController.xib in Resources */,
 				9A9C30EA28EE2D1500015B19 /* RegisterViewController.xib in Resources */,
@@ -686,6 +704,7 @@
 				9A749FB428F7410B00D06253 /* HomePostTableViewCell.swift in Sources */,
 				9A749FA228F6EEB300D06253 /* LoginInteractor.swift in Sources */,
 				9A749F9D28F639DA00D06253 /* HomeViewController.swift in Sources */,
+				9A749FC628F84FA500D06253 /* ApodDetailPresenter.swift in Sources */,
 				9A9C30EC28EE2D2200015B19 /* RegisterInteractor.swift in Sources */,
 				9A749FA028F6EEA800D06253 /* LoginPresenter.swift in Sources */,
 				9AB7CB0228F05A5A00C2F47A /* RegisterPresenterProtocol.swift in Sources */,
@@ -701,6 +720,7 @@
 				9AA14FA828EE4BDC006A3BDF /* FirebaseAuthManager.swift in Sources */,
 				9A749FAE28F7352400D06253 /* ApodHTTPClient.swift in Sources */,
 				9A749FA828F7331900D06253 /* HomePresenter.swift in Sources */,
+				9A749FC328F84DF600D06253 /* ApodDetailViewController.swift in Sources */,
 				9A749F9628F6003F00D06253 /* SplashRouter.swift in Sources */,
 				9A749FB028F737E400D06253 /* Post.swift in Sources */,
 				9A749F9328F5FF7900D06253 /* SplashViewController.swift in Sources */,

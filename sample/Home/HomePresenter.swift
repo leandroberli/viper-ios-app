@@ -14,6 +14,7 @@ protocol HomePresenterProtocol {
     
     func getApods()
     func showSideMenu()
+    func didSelectItem(_ post: Post)
 }
 
 class HomePresenter: HomePresenterProtocol {
@@ -35,5 +36,9 @@ class HomePresenter: HomePresenterProtocol {
     
     func showSideMenu() {
         router?.showSideMenu()
+    }
+    
+    func didSelectItem(_ post: Post) {
+        router?.showDetail(withPost: post)
     }
 }

@@ -10,7 +10,9 @@ import SideMenu
 
 protocol HomeRouterProtocol {
     var entry: HomeViewController? { get set }
+    
     func showSideMenu()
+    func showDetail(withPost: Post)
 }
 
 class HomeRouter: HomeRouterProtocol {
@@ -26,5 +28,12 @@ class HomeRouter: HomeRouterProtocol {
         vc.presenter = presenter
         
         entry?.present(menu, animated: true)
+    }
+    
+    func showDetail(withPost: Post) {
+        let vc = ApodDetailViewController()
+        let presenter = ApodDetailPresenter(data: withPost, view: vc)
+        vc.presenter = presenter
+        entry?.navigationController?.pushViewController(vc, animated: true)
     }
 }

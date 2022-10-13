@@ -9,7 +9,6 @@ import Foundation
 import SideMenu
 
 protocol SideMenuPresenterProtocol {
-    
     var view: SideMenuViewController? { get set }
     var router: SideMenuRouter? { get set }
     
