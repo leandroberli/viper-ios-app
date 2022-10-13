@@ -32,6 +32,8 @@
 		9A749FB528F7410B00D06253 /* HomePostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A749FB328F7410B00D06253 /* HomePostTableViewCell.xib */; };
 		9A749FBA28F74D2700D06253 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FB828F74D2700D06253 /* SideMenuViewController.swift */; };
 		9A749FBB28F74D2700D06253 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A749FB928F74D2700D06253 /* SideMenuViewController.xib */; };
+		9A749FBE28F8441300D06253 /* SideMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FBD28F8441300D06253 /* SideMenuPresenter.swift */; };
+		9A749FC028F8441F00D06253 /* SideMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FBF28F8441F00D06253 /* SideMenuRouter.swift */; };
 		9A9C30AB28EE081A00015B19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C30AA28EE081A00015B19 /* AppDelegate.swift */; };
 		9A9C30AD28EE081A00015B19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C30AC28EE081A00015B19 /* SceneDelegate.swift */; };
 		9A9C30B428EE081B00015B19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A9C30B328EE081B00015B19 /* Assets.xcassets */; };
@@ -104,6 +106,8 @@
 		9A749FB328F7410B00D06253 /* HomePostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePostTableViewCell.xib; sourceTree = "<group>"; };
 		9A749FB828F74D2700D06253 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		9A749FB928F74D2700D06253 /* SideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
+		9A749FBD28F8441300D06253 /* SideMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuPresenter.swift; sourceTree = "<group>"; };
+		9A749FBF28F8441F00D06253 /* SideMenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRouter.swift; sourceTree = "<group>"; };
 		9A9C30A728EE081A00015B19 /* sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9C30AA28EE081A00015B19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A9C30AC28EE081A00015B19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -260,6 +264,8 @@
 			children = (
 				9A749FB828F74D2700D06253 /* SideMenuViewController.swift */,
 				9A749FB928F74D2700D06253 /* SideMenuViewController.xib */,
+				9A749FBD28F8441300D06253 /* SideMenuPresenter.swift */,
+				9A749FBF28F8441F00D06253 /* SideMenuRouter.swift */,
 			);
 			path = SideMenu;
 			sourceTree = "<group>";
@@ -685,6 +691,7 @@
 				9AB7CB0228F05A5A00C2F47A /* RegisterPresenterProtocol.swift in Sources */,
 				9A749FA628F6F5E500D06253 /* UIViewController+Extension.swift in Sources */,
 				9A749FAA28F7333500D06253 /* HomeInteractor.swift in Sources */,
+				9A749FC028F8441F00D06253 /* SideMenuRouter.swift in Sources */,
 				9A9C30F028EE2D5100015B19 /* RegisterRouter.swift in Sources */,
 				9A749FA428F6F2FE00D06253 /* LoginRouter.swift in Sources */,
 				9AD9C34528F5B0C500CEE4ED /* RegisterDataValidator.swift in Sources */,
@@ -699,6 +706,7 @@
 				9A749F9328F5FF7900D06253 /* SplashViewController.swift in Sources */,
 				9A749FAC28F7335400D06253 /* HomeRouter.swift in Sources */,
 				9A749F9828F6076C00D06253 /* SplashPresenter.swift in Sources */,
+				9A749FBE28F8441300D06253 /* SideMenuPresenter.swift in Sources */,
 				9A9C30EE28EE2D3400015B19 /* RegisterPresenter.swift in Sources */,
 				9AB7CB0628F05AEE00C2F47A /* RegisterViewProtocol.swift in Sources */,
 				9A9C30AB28EE081A00015B19 /* AppDelegate.swift in Sources */,

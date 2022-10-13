@@ -33,6 +33,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "HomePostTableViewCell", bundle: nil), forCellReuseIdentifier: "HomePostTableViewCell")
+        tableView.backgroundColor = .systemGray6
     }
     
     private func addSwipeForSidemenuGesture() {
@@ -48,6 +49,15 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewDidLayoutSubviews() {
+        tableView.visibleCells.forEach({
+            guard let cell = $0 as? HomePostTableViewCell else {
+                return
+            }
+            cell.updateShadowPath()
+        })
     }
 
     func refreshTable(withPosts: [Post]) {

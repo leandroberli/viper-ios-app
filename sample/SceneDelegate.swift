@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = initSplashScreen(scene: scene)
     }
     
-    private func initSplashScreen(scene: UIWindowScene) -> UIWindow {
+    func initSplashScreen(scene: UIWindowScene) -> UIWindow {
         let router = SplashRouter()
         let window = UIWindow(windowScene: scene)
         window.rootViewController = router.entry

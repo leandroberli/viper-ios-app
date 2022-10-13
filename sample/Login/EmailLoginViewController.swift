@@ -21,6 +21,8 @@ class EmailLoginViewController: UIViewController, EmailLoginViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        passwordTextfield.text = "lalala"
+        emailTextfield.text = "lea@gmail.com"
     }
     
     override func viewWillAppear(_ animated: Bool) {
