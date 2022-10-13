@@ -13,8 +13,8 @@ protocol EmailLoginViewProtocol {
 
 class EmailLoginViewController: UIViewController, EmailLoginViewProtocol {
 
-    @IBOutlet weak var emailTextfield: UITextField!
-    @IBOutlet weak var passwordTextfield: UITextField!
+    @IBOutlet weak var emailTextfield: BaseTextfield!
+    @IBOutlet weak var passwordTextfield: BaseTextfield!
     @IBOutlet weak var loginButton: LoginButton!
     
     var presenter: LoginPresenterProtocol?

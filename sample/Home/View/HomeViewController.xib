@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="sample" customModuleProvider="target">
             <connections>
+                <outlet property="profileButton" destination="vkJ-dh-Ohk" id="uQq-di-Up5"/>
                 <outlet property="tableView" destination="p1y-zC-wfa" id="tuC-cx-CdP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,17 +20,32 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkJ-dh-Ohk">
-                    <rect key="frame" x="10" y="10" width="48" height="35"/>
-                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="person" catalog="system"/>
-                    <connections>
-                        <action selector="sideMenuAction:" destination="-1" eventType="touchUpInside" id="Mi8-xg-aSh"/>
-                    </connections>
-                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p6r-wD-KuX">
+                    <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkJ-dh-Ohk">
+                            <rect key="frame" x="10" y="4.6666666666666643" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="IMy-P1-iRM"/>
+                                <constraint firstAttribute="height" constant="35" id="v3e-KX-in8"/>
+                            </constraints>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="person" catalog="system"/>
+                            <connections>
+                                <action selector="sideMenuAction:" destination="-1" eventType="touchUpInside" id="Mi8-xg-aSh"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="vkJ-dh-Ohk" firstAttribute="leading" secondItem="p6r-wD-KuX" secondAttribute="leading" constant="10" id="3f4-UC-6iR"/>
+                        <constraint firstAttribute="height" constant="44" id="N9I-Vm-fle"/>
+                        <constraint firstItem="vkJ-dh-Ohk" firstAttribute="centerY" secondItem="p6r-wD-KuX" secondAttribute="centerY" id="cCi-zc-r7U"/>
+                    </constraints>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="p1y-zC-wfa">
-                    <rect key="frame" x="0.0" y="44" width="390" height="800"/>
+                    <rect key="frame" x="0.0" y="91" width="390" height="719"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
@@ -37,10 +53,11 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="p1y-zC-wfa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1L5-ap-mdn"/>
-                <constraint firstItem="vkJ-dh-Ohk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="GPb-3o-nvR"/>
-                <constraint firstItem="vkJ-dh-Ohk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="HPD-3Q-vbb"/>
+                <constraint firstItem="p1y-zC-wfa" firstAttribute="top" secondItem="p6r-wD-KuX" secondAttribute="bottom" id="ZLZ-HU-NGw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="p1y-zC-wfa" secondAttribute="trailing" id="abs-qP-Erd"/>
-                <constraint firstItem="p1y-zC-wfa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="44" id="n3q-Aj-8Zs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="p6r-wD-KuX" secondAttribute="top" id="dhq-3w-E3h"/>
+                <constraint firstItem="p6r-wD-KuX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="f9Z-JA-woT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="p6r-wD-KuX" secondAttribute="trailing" id="pQn-0A-2DW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="p1y-zC-wfa" secondAttribute="bottom" id="x5V-nd-9uU"/>
             </constraints>
             <point key="canvasLocation" x="128" y="21"/>

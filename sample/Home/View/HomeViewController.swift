@@ -17,6 +17,7 @@ protocol HomeViewProtocol {
 class HomeViewController: UIViewController, HomeViewProtocol {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var profileButton: UIButton!
     
     var presenter: HomePresenterProtocol?
     var posts: [Post] = []
@@ -26,6 +27,11 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         setupTable()
         addSwipeForSidemenuGesture()
         showActivityIndicator()
+        
+        profileButton.backgroundColor = .black
+        profileButton.tintColor = .white
+        profileButton.layer.cornerRadius = profileButton.frame.height / 2
+        
         presenter?.getApods()
     }
     

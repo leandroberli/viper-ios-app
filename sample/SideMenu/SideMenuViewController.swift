@@ -10,8 +10,8 @@ import UIKit
 class SideMenuViewController: UIViewController {
     
     @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var editProfileButton: UIButton!
-    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var editProfileButton: SimpleButton!
+    @IBOutlet weak var logoutButton: LogoutButton!
     
     var presenter: SideMenuPresenter?
 

@@ -22,22 +22,22 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RcU-38-YGk">
-                    <rect key="frame" x="10" y="351" width="370" height="142.33333333333337"/>
+                    <rect key="frame" x="10" y="167" width="370" height="138"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u1n-Gh-fDT">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="u1n-Gh-fDT" customClass="BaseTextfield" customModule="sample" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="370" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="continue" textContentType="email"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HV6-wQ-ZqT">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HV6-wQ-ZqT" customClass="BaseTextfield" customModule="sample" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="54" width="370" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzq-az-oN2" customClass="LoginButton" customModule="sample" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="108" width="370" height="34.333333333333343"/>
+                            <rect key="frame" x="0.0" y="108" width="370" height="30"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             <connections>
                                 <action selector="loginButtonAction:" destination="-1" eventType="touchUpInside" id="a6N-qn-MpI"/>
                             </connections>
@@ -59,7 +59,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RcU-38-YGk" secondAttribute="trailing" constant="10" id="359-Lx-Kkf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vSl-jw-zRB" secondAttribute="trailing" constant="10" id="Sb2-MK-KJi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vSl-jw-zRB" secondAttribute="bottom" constant="20" id="dx1-Ud-R4g"/>
-                <constraint firstItem="RcU-38-YGk" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="hm4-7o-0Xk"/>
+                <constraint firstItem="RcU-38-YGk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="jbN-XK-LPm"/>
                 <constraint firstItem="RcU-38-YGk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="oAy-5q-wzT"/>
                 <constraint firstItem="vSl-jw-zRB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="uSU-CM-Eim"/>
             </constraints>

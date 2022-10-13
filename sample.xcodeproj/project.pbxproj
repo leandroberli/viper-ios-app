@@ -37,6 +37,7 @@
 		9A749FC328F84DF600D06253 /* ApodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FC128F84DF600D06253 /* ApodDetailViewController.swift */; };
 		9A749FC428F84DF600D06253 /* ApodDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A749FC228F84DF600D06253 /* ApodDetailViewController.xib */; };
 		9A749FC628F84FA500D06253 /* ApodDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FC528F84FA500D06253 /* ApodDetailPresenter.swift */; };
+		9A749FC928F8603F00D06253 /* Textfields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FC828F8603F00D06253 /* Textfields.swift */; };
 		9A9C30AB28EE081A00015B19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C30AA28EE081A00015B19 /* AppDelegate.swift */; };
 		9A9C30AD28EE081A00015B19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C30AC28EE081A00015B19 /* SceneDelegate.swift */; };
 		9A9C30B428EE081B00015B19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A9C30B328EE081B00015B19 /* Assets.xcassets */; };
@@ -57,7 +58,7 @@
 		9AB7CB0228F05A5A00C2F47A /* RegisterPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7CB0128F05A5A00C2F47A /* RegisterPresenterProtocol.swift */; };
 		9AB7CB0428F05AC200C2F47A /* RegisterInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7CB0328F05AC200C2F47A /* RegisterInteractorProtocol.swift */; };
 		9AB7CB0628F05AEE00C2F47A /* RegisterViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7CB0528F05AEE00C2F47A /* RegisterViewProtocol.swift */; };
-		9AB7CB0928F0802200C2F47A /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7CB0828F0802200C2F47A /* RegisterButton.swift */; };
+		9AB7CB0928F0802200C2F47A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7CB0828F0802200C2F47A /* Buttons.swift */; };
 		9AD9C34528F5B0C500CEE4ED /* RegisterDataValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9C34428F5B0C500CEE4ED /* RegisterDataValidator.swift */; };
 		E01085AEA8ECCDD46425FF47 /* Pods_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9756AAE6E019706BCFC6AEC3 /* Pods_sample.framework */; };
 		E1FB77CE0D631B6EA25165BB /* Pods_sample_sampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D1C89E283BF3C406450614 /* Pods_sample_sampleUITests.framework */; };
@@ -114,6 +115,7 @@
 		9A749FC128F84DF600D06253 /* ApodDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodDetailViewController.swift; sourceTree = "<group>"; };
 		9A749FC228F84DF600D06253 /* ApodDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApodDetailViewController.xib; sourceTree = "<group>"; };
 		9A749FC528F84FA500D06253 /* ApodDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodDetailPresenter.swift; sourceTree = "<group>"; };
+		9A749FC828F8603F00D06253 /* Textfields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textfields.swift; sourceTree = "<group>"; };
 		9A9C30A728EE081A00015B19 /* sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9C30AA28EE081A00015B19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A9C30AC28EE081A00015B19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,7 +140,7 @@
 		9AB7CB0128F05A5A00C2F47A /* RegisterPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenterProtocol.swift; sourceTree = "<group>"; };
 		9AB7CB0328F05AC200C2F47A /* RegisterInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractorProtocol.swift; sourceTree = "<group>"; };
 		9AB7CB0528F05AEE00C2F47A /* RegisterViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewProtocol.swift; sourceTree = "<group>"; };
-		9AB7CB0828F0802200C2F47A /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
+		9AB7CB0828F0802200C2F47A /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		9AD9C34428F5B0C500CEE4ED /* RegisterDataValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDataValidator.swift; sourceTree = "<group>"; };
 		A65FC8D132205B508771C378 /* Pods-sampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleTests.debug.xcconfig"; path = "Target Support Files/Pods-sampleTests/Pods-sampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A6E906298DCBFC7DFC28D698 /* Pods_sampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -424,7 +426,8 @@
 		9AB7CB0728F0800000C2F47A /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				9AB7CB0828F0802200C2F47A /* RegisterButton.swift */,
+				9AB7CB0828F0802200C2F47A /* Buttons.swift */,
+				9A749FC828F8603F00D06253 /* Textfields.swift */,
 				9A749FA528F6F5E500D06253 /* UIViewController+Extension.swift */,
 			);
 			path = Common;
@@ -703,6 +706,7 @@
 				9A749F8E28F5FE8E00D06253 /* EmailLoginViewController.swift in Sources */,
 				9A749FB428F7410B00D06253 /* HomePostTableViewCell.swift in Sources */,
 				9A749FA228F6EEB300D06253 /* LoginInteractor.swift in Sources */,
+				9A749FC928F8603F00D06253 /* Textfields.swift in Sources */,
 				9A749F9D28F639DA00D06253 /* HomeViewController.swift in Sources */,
 				9A749FC628F84FA500D06253 /* ApodDetailPresenter.swift in Sources */,
 				9A9C30EC28EE2D2200015B19 /* RegisterInteractor.swift in Sources */,
@@ -730,7 +734,7 @@
 				9A9C30EE28EE2D3400015B19 /* RegisterPresenter.swift in Sources */,
 				9AB7CB0628F05AEE00C2F47A /* RegisterViewProtocol.swift in Sources */,
 				9A9C30AB28EE081A00015B19 /* AppDelegate.swift in Sources */,
-				9AB7CB0928F0802200C2F47A /* RegisterButton.swift in Sources */,
+				9AB7CB0928F0802200C2F47A /* Buttons.swift in Sources */,
 				9A749FBA28F74D2700D06253 /* SideMenuViewController.swift in Sources */,
 				9A9C30AD28EE081A00015B19 /* SceneDelegate.swift in Sources */,
 			);
