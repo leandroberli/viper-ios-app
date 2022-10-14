@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 protocol HomeViewProtocol {
     var presenter: HomePresenterProtocol? { get set }
@@ -100,16 +99,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let post = posts[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomePostTableViewCell", for: indexPath) as! HomePostTableViewCell
-        cell.titleLabel.text = post.title
-        cell.descLabel.text = post.explanation
-        cell.postImage.kf.setImage(with: URL(string: post.url))
+        cell.setupPost(posts[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let post = posts[indexPath.row]
-        self.presenter?.didSelectItem(post)
+        self.presenter?.didSelectItem(posts[indexPath.row])
     }
 }

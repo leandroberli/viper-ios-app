@@ -31,7 +31,7 @@ class LoginPresenter: LoginPresenterProtocol {
     }
     
     func startRegisterProcess() {
-        self.router?.startRegisterProcess()
+        self.router?.showRegisterFormScreen()
     }
     
     func startAuthentication(withEmail: String, password: String) {

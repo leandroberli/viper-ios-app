@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomePostTableViewCell: UITableViewCell {
     
@@ -39,6 +40,12 @@ class HomePostTableViewCell: UITableViewCell {
         mainView.layer.shadowOpacity = 0.3
         mainView.layer.shadowRadius = 2
         mainView.layer.shadowPath = UIBezierPath(roundedRect: mainView.bounds, cornerRadius: 10).cgPath
+    }
+    
+    public func setupPost(_ post: Post) {
+        self.titleLabel.text = post.title
+        self.descLabel.text = post.explanation
+        self.postImage.kf.setImage(with: URL(string: post.url))
     }
     
 

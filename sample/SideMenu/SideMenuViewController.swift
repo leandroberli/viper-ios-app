@@ -18,6 +18,10 @@ class SideMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
+        setupUserImage()
+    }
+    
+    private func setupUserImage() {
         userImage.layer.borderWidth = 1.5
         userImage.layer.borderColor = UIColor.systemMint.cgColor
         presenter?.getUserProfileImage()

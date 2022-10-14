@@ -67,7 +67,13 @@ class SideMenuPresenter: NSObject, SideMenuPresenterProtocol {
         guard let data = image.pngData(), let user = FirebaseAuthManager().getAuthentincathedUser() else {
             return
         }
-        StorageManager().uploadProfilePhotoForUser(withId: user.uid, data: data)
+        StorageManager().uploadProfilePhotoForUser(withId: user.uid, data: data) { success, error in
+            if success {
+                //Image uploaded
+            } else {
+                print(error?.localizedDescription ?? "")
+            }
+        }
     }
 }
 

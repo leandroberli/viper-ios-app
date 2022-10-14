@@ -10,7 +10,7 @@ import UIKit
 
 class BaseTextfield: UITextField {
     
-    var bottomLine: CALayer?
+    var bottomLine: CALayer = CALayer()
     let bottomLineHeight = 1.0
     let height = 30.0
     let fontSize = 17.0
@@ -28,8 +28,8 @@ class BaseTextfield: UITextField {
         self.font = UIFont.systemFont(ofSize: fontSize, weight: .regular)
         
         self.bottomLine = CALayer()
-        self.bottomLine?.frame = CGRect(x: 0, y: height - bottomLineHeight, width: self.bounds.width, height: bottomLineHeight)
-        self.bottomLine?.backgroundColor = UIColor.lightGray.cgColor
-        self.layer.addSublayer(self.bottomLine!)
+        self.bottomLine.frame = CGRect(x: 0, y: height - bottomLineHeight, width: self.bounds.width, height: bottomLineHeight)
+        self.bottomLine.backgroundColor = UIColor.lightGray.cgColor
+        self.layer.addSublayer(self.bottomLine)
     }
 }

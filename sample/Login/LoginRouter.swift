@@ -11,7 +11,7 @@ import UIKit
 protocol LoginRouterProtocol {
     var entry: EmailLoginViewController? { get set }
     
-    func startRegisterProcess()
+    func showRegisterFormScreen()
     func showHomeScreen()
 }
 
@@ -28,7 +28,7 @@ class LoginRouter: LoginRouterProtocol {
         self.entry = loginViewController
     }
     
-    func startRegisterProcess() {
+    func showRegisterFormScreen() {
         let router = RegisterRouter()
         entry?.navigationController?.pushViewController(router.entry as! RegisterViewController, animated: true)
     }

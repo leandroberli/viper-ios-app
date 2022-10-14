@@ -30,6 +30,7 @@ class FirebaseAuthManager: FirebaseAuthProtocol {
         }
     }
     
+    //Login request
     func authenticateUser(withEmail: String, password: String, completion: @escaping (User?, Error?) -> Void) {
         Auth.auth().signIn(withEmail: withEmail, password: password) { authData, error in
             if let err = error {
@@ -40,7 +41,7 @@ class FirebaseAuthManager: FirebaseAuthProtocol {
         }
     }
     
-    
+    //Get current user
     func getAuthentincathedUser() -> User? {
         if let user = Auth.auth().currentUser {
           return user
@@ -55,9 +56,7 @@ class FirebaseAuthManager: FirebaseAuthProtocol {
                 completion(nil,err)
                 return
             }
-            if let user = authResult?.user {
-                completion(user, nil)
-            }
+            completion(authResult?.user, nil)
         }
     }
 }
