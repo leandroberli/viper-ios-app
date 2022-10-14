@@ -33,7 +33,7 @@ final class RegisterInteractorTests: XCTestCase {
         
         fbManager.error = true
         presenter.expectation = myExpectation
-        sut.registerNewUser(withEmail: "leandroberli@gmail.com", password: "lalala")
+        sut.registerNewUser(withEmail: "lea@gmail.com", password: "lalala")
         
         self.wait(for: [myExpectation], timeout: 5)
         

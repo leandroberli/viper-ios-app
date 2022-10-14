@@ -76,7 +76,7 @@ class LoginButton: BaseFormButton {
 //MARK: Logout button
 class LogoutButton: UIButton {
     let color = UIColor.red
-    let fontSize = 17.0
+    let fontSize = 14.0
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -84,8 +84,14 @@ class LogoutButton: UIButton {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        self.layer.cornerRadius = 15
+        self.layer.borderWidth = 1
+        self.layer.borderColor = color.cgColor
         self.setTitle("Log out", for: .normal)
         self.titleLabel?.font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
+        
     }
 }
 
@@ -93,7 +99,7 @@ class LogoutButton: UIButton {
 class SimpleButton: UIButton {
     
     var fontSize = 14.0
-    var titleColor = UIColor.systemMint
+    var titleColor = UIColor.black
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)

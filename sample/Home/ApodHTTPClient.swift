@@ -7,6 +7,8 @@
 
 import Foundation
 
+//TODO: Error handling
+
 protocol ApodHTTPClientProtocol {
     func getApods(completion: @escaping ([Post]?,Error?) -> Void)
 }
@@ -21,10 +23,7 @@ class ApodHTTPClient: ApodHTTPClientProtocol {
             return
         }
         
-        var request = URLRequest(url: url)
-        let queryItem = URLQueryItem(name: "api_key", value: apiKey)
-        let dateQueryItem = URLQueryItem(name: "start_date", value: "2022-10-10")
-        request.url?.append(queryItems: [queryItem, dateQueryItem])
+        let request = getBasicURLRequest(with: url)
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let err = error {
@@ -32,8 +31,8 @@ class ApodHTTPClient: ApodHTTPClientProtocol {
                 completion(nil,err)
                 return
             }
-            if let data = data, let string = String(data: data, encoding: .utf8) {
-                print(string)
+            if let data = data, let _ = String(data: data, encoding: .utf8) {
+                //print(string)
                 do {
                     let post = try JSONDecoder().decode([Post].self, from: data)
                     completion(post,nil)
@@ -42,6 +41,14 @@ class ApodHTTPClient: ApodHTTPClientProtocol {
                 }
             }
         }.resume()
+    }
+    
+    private func getBasicURLRequest(with url: URL) -> URLRequest {
+        var request = URLRequest(url: url)
+        let queryItem = URLQueryItem(name: "api_key", value: apiKey)
+        let dateQueryItem = URLQueryItem(name: "start_date", value: "2022-10-10")
+        request.url?.append(queryItems: [queryItem, dateQueryItem])
+        return request
     }
     
 }

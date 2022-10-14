@@ -35,7 +35,7 @@ final class FirebaseAuthManagerTests: XCTestCase {
     func testCreateNewUser_GivenUsedEmail_shouldReturnError() throws {
         let expectation = self.expectation(description: "Expect error when try user creation")
         
-        sut.createUser(withEmail: "leandroberli@gmail.com", password: "123123") { user, error in
+        sut.createUser(withEmail: "lea@gmail.com", password: "123123") { user, error in
             XCTAssertNotNil(error)
             expectation.fulfill()
         }

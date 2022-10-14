@@ -10,6 +10,18 @@ import FirebaseAuth
 @testable import sample
 
 class MockFirebaseAuthManager: FirebaseAuthProtocol {
+    func getAuthentincathedUser() -> User? {
+        return nil
+    }
+    
+    func authenticateUser(withEmail: String, password: String, completion: @escaping (User?, Error?) -> Void) {
+        
+    }
+    
+    func logoutUser() {
+        
+    }
+    
     var error: Bool? = false
 
     func createUser(withEmail: String, password: String, completion: @escaping (User?, Error?) -> Void) {
