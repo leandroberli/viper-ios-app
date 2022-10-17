@@ -43,7 +43,9 @@ class SideMenuPresenter: NSObject, SideMenuPresenterProtocol {
     }
     
     func didSelectEditProfile() {
-        router?.initImagePickerViewController(delegate: self)
+        //router?.initImagePickerViewController(delegate: self)
+        //Pass home view for update user photo
+        router?.showEditProfile(homeView: self.homeView)
     }
     
     func didSelectLogOut() {

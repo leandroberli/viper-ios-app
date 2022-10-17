@@ -37,4 +37,13 @@ class SideMenuRouter: NSObject, SideMenuRouterProtocol {
         picker.sourceType = .photoLibrary
         self.entry?.present(picker, animated: true)
     }
+    
+    func showEditProfile(homeView: HomeViewController?) {
+        let router = EditProfileRouter()
+        guard let entry = router.entry else {
+            return
+        }
+        entry.presenter?.homeView = homeView
+        self.entry?.navigationController?.pushViewController(entry, animated: true)
+    }
 }

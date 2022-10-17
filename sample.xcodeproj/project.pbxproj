@@ -10,6 +10,10 @@
 		3BF5A448C2D320F0E5564BF8 /* Pods_sampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E906298DCBFC7DFC28D698 /* Pods_sampleTests.framework */; };
 		9A3319AE28EE49CC00617232 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A3319AD28EE49CB00617232 /* GoogleService-Info.plist */; };
 		9A69002328FDC4BA00F591F8 /* StorageManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69002228FDC4BA00F591F8 /* StorageManagerTests.swift */; };
+		9A69002728FDCE3500F591F8 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69002528FDCE3500F591F8 /* EditProfileViewController.swift */; };
+		9A69002828FDCE3500F591F8 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A69002628FDCE3500F591F8 /* EditProfileViewController.xib */; };
+		9A69002A28FDD03E00F591F8 /* EditProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69002928FDD03E00F591F8 /* EditProfilePresenter.swift */; };
+		9A69002C28FDD4C200F591F8 /* EditProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69002B28FDD4C200F591F8 /* EditProfileRouter.swift */; };
 		9A749F8928F5FD5900D06253 /* RegisterRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749F8828F5FD5900D06253 /* RegisterRouterProtocol.swift */; };
 		9A749F8E28F5FE8E00D06253 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749F8C28F5FE8E00D06253 /* EmailLoginViewController.swift */; };
 		9A749F8F28F5FE8E00D06253 /* EmailLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A749F8D28F5FE8E00D06253 /* EmailLoginViewController.xib */; };
@@ -80,6 +84,10 @@
 		9756AAE6E019706BCFC6AEC3 /* Pods_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3319AD28EE49CB00617232 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9A69002228FDC4BA00F591F8 /* StorageManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManagerTests.swift; sourceTree = "<group>"; };
+		9A69002528FDCE3500F591F8 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		9A69002628FDCE3500F591F8 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
+		9A69002928FDD03E00F591F8 /* EditProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenter.swift; sourceTree = "<group>"; };
+		9A69002B28FDD4C200F591F8 /* EditProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileRouter.swift; sourceTree = "<group>"; };
 		9A749F8828F5FD5900D06253 /* RegisterRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouterProtocol.swift; sourceTree = "<group>"; };
 		9A749F8C28F5FE8E00D06253 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		9A749F8D28F5FE8E00D06253 /* EmailLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailLoginViewController.xib; sourceTree = "<group>"; };
@@ -162,6 +170,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A69002428FDCE1F00F591F8 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				9A69002528FDCE3500F591F8 /* EditProfileViewController.swift */,
+				9A69002628FDCE3500F591F8 /* EditProfileViewController.xib */,
+				9A69002928FDD03E00F591F8 /* EditProfilePresenter.swift */,
+				9A69002B28FDD4C200F591F8 /* EditProfileRouter.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
 		9A749F8228F5F90000D06253 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +324,7 @@
 		9A9C30A928EE081A00015B19 /* sample */ = {
 			isa = PBXGroup;
 			children = (
+				9A69002428FDCE1F00F591F8 /* EditProfile */,
 				9A749FBC28F7566600D06253 /* Detail */,
 				9A749FB728F74D1200D06253 /* SideMenu */,
 				9AB7CB0728F0800000C2F47A /* Common */,
@@ -531,6 +551,7 @@
 				9A3319AE28EE49CC00617232 /* GoogleService-Info.plist in Resources */,
 				9A9C30B428EE081B00015B19 /* Assets.xcassets in Resources */,
 				9A749FB528F7410B00D06253 /* HomePostTableViewCell.xib in Resources */,
+				9A69002828FDCE3500F591F8 /* EditProfileViewController.xib in Resources */,
 				9A749FC428F84DF600D06253 /* ApodDetailViewController.xib in Resources */,
 				9A749F8F28F5FE8E00D06253 /* EmailLoginViewController.xib in Resources */,
 				9A749F9E28F639DA00D06253 /* HomeViewController.xib in Resources */,
@@ -621,6 +642,7 @@
 				9A749F8E28F5FE8E00D06253 /* EmailLoginViewController.swift in Sources */,
 				9A749FB428F7410B00D06253 /* HomePostTableViewCell.swift in Sources */,
 				9A749FCB28F8898F00D06253 /* StorageManager.swift in Sources */,
+				9A69002A28FDD03E00F591F8 /* EditProfilePresenter.swift in Sources */,
 				9A749FA228F6EEB300D06253 /* LoginInteractor.swift in Sources */,
 				9A749FC928F8603F00D06253 /* Textfields.swift in Sources */,
 				9A749F9D28F639DA00D06253 /* HomeViewController.swift in Sources */,
@@ -637,6 +659,7 @@
 				9AB7CB0428F05AC200C2F47A /* RegisterInteractorProtocol.swift in Sources */,
 				9A749F9A28F607CB00D06253 /* SplashInteractor.swift in Sources */,
 				9A9C30E928EE2D1500015B19 /* RegisterViewController.swift in Sources */,
+				9A69002C28FDD4C200F591F8 /* EditProfileRouter.swift in Sources */,
 				9AA14FA828EE4BDC006A3BDF /* FirebaseAuthManager.swift in Sources */,
 				9A749FAE28F7352400D06253 /* ApodHTTPClient.swift in Sources */,
 				9A749FA828F7331900D06253 /* HomePresenter.swift in Sources */,
@@ -645,6 +668,7 @@
 				9A749FB028F737E400D06253 /* Post.swift in Sources */,
 				9A749F9328F5FF7900D06253 /* SplashViewController.swift in Sources */,
 				9A749FAC28F7335400D06253 /* HomeRouter.swift in Sources */,
+				9A69002728FDCE3500F591F8 /* EditProfileViewController.swift in Sources */,
 				9A749F9828F6076C00D06253 /* SplashPresenter.swift in Sources */,
 				9A749FBE28F8441300D06253 /* SideMenuPresenter.swift in Sources */,
 				9A9C30EE28EE2D3400015B19 /* RegisterPresenter.swift in Sources */,
