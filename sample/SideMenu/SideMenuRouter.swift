@@ -40,10 +40,10 @@ class SideMenuRouter: NSObject, SideMenuRouterProtocol {
     
     func showEditProfile(homeView: HomeViewController?) {
         let router = EditProfileRouter()
-        guard let entry = router.entry else {
+        guard let editProfViewController = router.entry else {
             return
         }
-        entry.presenter?.homeView = homeView
-        self.entry?.navigationController?.pushViewController(entry, animated: true)
+        editProfViewController.presenter?.homeView = homeView
+        self.entry?.navigationController?.pushViewController(editProfViewController, animated: true)
     }
 }

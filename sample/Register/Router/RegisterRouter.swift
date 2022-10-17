@@ -45,4 +45,17 @@ class RegisterRouter: RegisterRouterProtocol {
         
         entry?.navigationController?.pushViewController(homeViewController, animated: false)
     }
+    
+    func showEditProfile() {
+        let router = EditProfileRouter()
+        //Get view controller created in router constructor.
+        guard let view = router.entry else {
+            return
+        }
+        let presenter = EditProfilePresenter(storageManager: StorageManager(), view: view, authManager: FirebaseAuthManager(), router: router)
+        //Register flow flag.
+        presenter.fromRegisterProcess = true
+        view.presenter = presenter
+        entry?.navigationController?.pushViewController(view, animated: true)
+    }
 }

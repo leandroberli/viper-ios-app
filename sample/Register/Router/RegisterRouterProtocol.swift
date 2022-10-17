@@ -12,4 +12,5 @@ protocol RegisterRouterProtocol {
 
     func showSimpleNativeAlert(with messagge: String?, title: String?)
     func showHome()
+    func showEditProfile()
 }

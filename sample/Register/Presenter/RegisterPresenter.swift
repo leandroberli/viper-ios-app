@@ -26,10 +26,9 @@ class RegisterPresenter: RegisterPresenterProtocol {
         case .success(_):
             print("Register success")
             view?.registerSuccess()
-            router?.showHome()
+            router?.showEditProfile()
         case .failure(let failure):
             print("Register failed. Reason: ", failure.localizedDescription)
-            //TODO: Also here.
             view?.registerFailed(messagge: failure.localizedDescription)
         }
     }

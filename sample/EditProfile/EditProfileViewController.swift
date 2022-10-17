@@ -17,6 +17,7 @@ class EditProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.getUserProfilePhoto()
     }
     
     func updatePhotoProfile(_ image: UIImage?) {
@@ -26,5 +27,9 @@ class EditProfileViewController: UIViewController {
 
     @IBAction func changePhotoAction(_ sender: Any) {
         self.presenter?.didSelectChangePhoto()
+    }
+    
+    @IBAction func saveAction(_ sender: Any) {
+        self.presenter?.didSelectSave()
     }
 }

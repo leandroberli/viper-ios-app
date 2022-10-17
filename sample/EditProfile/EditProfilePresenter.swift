@@ -13,20 +13,22 @@ protocol EditProfilePresenterProtocol {
     var storageManager: StorageManager? { get set }
     var authManager: FirebaseAuthProtocol? { get set }
     var router: EditProfileRouterProtocol? { get set }
-    var sideMenuView: SideMenuViewController? { get set }
+    //var sideMenuView: SideMenuViewController? { get set }
     var homeView: HomeViewController? { get set }
     
-    func getUserProfilePhoto(withId: String)
+    func getUserProfilePhoto()
     func didSelectChangePhoto()
+    func didSelectSave()
 }
 
 class EditProfilePresenter: NSObject, EditProfilePresenterProtocol {
     var storageManager: StorageManager?
     var authManager: FirebaseAuthProtocol?
     var view: EditProfileViewController?
-    weak var sideMenuView: SideMenuViewController?
+    //weak var sideMenuView: SideMenuViewController?
     weak var homeView: HomeViewController?
     var router: EditProfileRouterProtocol?
+    var fromRegisterProcess = false
     
     init(storageManager: StorageManager, view: EditProfileViewController, authManager: FirebaseAuthProtocol, router: EditProfileRouterProtocol?) {
         super.init()
@@ -35,10 +37,10 @@ class EditProfilePresenter: NSObject, EditProfilePresenterProtocol {
         self.view = view
         self.authManager = authManager
         self.router = router
-        self.getUserProfilePhoto(withId: self.authManager?.getAuthentincathedUser()?.uid ?? "")
     }
     
-    func getUserProfilePhoto(withId: String) {
+    func getUserProfilePhoto() {
+        let withId = self.authManager?.getAuthentincathedUser()?.uid ?? ""
         self.storageManager?.getImageProfilePhotoUser(withId: withId) { image, error in
             DispatchQueue.main.async {
                 self.view?.updatePhotoProfile(image)
@@ -48,6 +50,14 @@ class EditProfilePresenter: NSObject, EditProfilePresenterProtocol {
     
     func didSelectChangePhoto() {
         self.router?.initImagePickerViewController(delegate: self)
+    }
+    
+    func didSelectSave() {
+        if !fromRegisterProcess {
+            self.router?.popEntry()
+        } else {
+            self.router?.showHomeViewController()
+        }
     }
 }
 
