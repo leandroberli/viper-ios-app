@@ -25,8 +25,8 @@ class RegisterPresenter: RegisterPresenterProtocol {
         switch result {
         case .success(_):
             print("Register success")
-            view?.registerSuccess()
-            //TODO: Use router for navigation here.
+            //view?.registerSuccess()
+            router?.showHome()
         case .failure(let failure):
             print("Register failed. Reason: ", failure.localizedDescription)
             //TODO: Also here.

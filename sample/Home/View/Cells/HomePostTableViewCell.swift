@@ -51,5 +51,17 @@ class HomePostTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        highlighted ? changeAlpha(to: 0.5) : changeAlpha(to: 1)
+    }
+    
+    private func changeAlpha(to: CGFloat) {
+        UIView.animate(withDuration: 0.1, delay: 0) {
+            self.mainView.alpha = to
+        }
     }
 }

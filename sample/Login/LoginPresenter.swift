@@ -46,14 +46,15 @@ class LoginPresenter: LoginPresenterProtocol {
     
     func didAuthenticateRequestFailed(error: String) {
         print(error)
-        router?.entry?.showSimpleNativeAlert(with: error, title: "Login error")
+        self.view?.didReceivedAuthError()
+        self.router?.entry?.showSimpleNativeAlert(with: error, title: "Login error")
     }
     
     func didAuthenticateRequestSuccess() {
-        showHomeScreen()
+        self.showHomeScreen()
     }
     
     func showHomeScreen() {
-        router?.showHomeScreen()
+        self.router?.showHomeScreen()
     }
 }

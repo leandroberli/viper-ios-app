@@ -32,4 +32,17 @@ class RegisterRouter: RegisterRouterProtocol {
         alert.addAction(action)
         self.entry?.present(alert, animated: true)
     }
+    
+    func showHome() {
+        let homeViewController = HomeViewController()
+        let interactor = HomeInteractor(httpClient: ApodHTTPClient())
+        let router = HomeRouter()
+        router.entry = homeViewController
+        
+        let presenter = HomePresenter(view: homeViewController, interactor: interactor, router: router)
+        
+        homeViewController.presenter = presenter
+        
+        entry?.navigationController?.pushViewController(homeViewController, animated: false)
+    }
 }

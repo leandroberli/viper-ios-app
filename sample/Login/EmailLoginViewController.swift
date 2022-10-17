@@ -9,10 +9,12 @@ import UIKit
 
 protocol EmailLoginViewProtocol {
     var presenter: LoginPresenterProtocol? { get set }
+    
+    func didReceivedAuthError()
 }
 
 class EmailLoginViewController: UIViewController, EmailLoginViewProtocol {
-
+   
     @IBOutlet weak var emailTextfield: BaseTextfield!
     @IBOutlet weak var passwordTextfield: BaseTextfield!
     @IBOutlet weak var loginButton: LoginButton!
@@ -34,9 +36,15 @@ class EmailLoginViewController: UIViewController, EmailLoginViewProtocol {
     }
 
     @IBAction func loginButtonAction(_ sender: Any) {
+        self.showActivityIndicator()
         presenter?.startAuthentication(withEmail: emailTextfield.text ?? "", password: passwordTextfield.text ?? "")
     }
     
+    func didReceivedAuthError() {
+        DispatchQueue.main.async {
+            self.removeActivityIndicator()
+        }
+    }
     
     @IBAction func registerAction(_ sender: Any) {
         presenter?.startRegisterProcess()

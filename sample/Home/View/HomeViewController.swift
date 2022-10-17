@@ -78,7 +78,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         self.posts = withPosts
         DispatchQueue.main.async {
             self.removeActivityIndicator()
-            self.tableView.reloadData()
+            self.tableView.reloadSections(IndexSet([0]), with: .fade)
         }
     }
     

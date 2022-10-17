@@ -33,6 +33,7 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
         let email = emailTextfield.text ?? ""
         let password = passwordTextfield.text ?? ""
         if self.presenter?.isDataProvidedValid(email: email, password: password) ?? false {
+            self.showActivityIndicator()
             self.presenter?.sendNewRegisterRequest(email: email , password: password)
         }
     }

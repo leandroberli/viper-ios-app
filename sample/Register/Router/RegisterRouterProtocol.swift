@@ -11,4 +11,5 @@ protocol RegisterRouterProtocol {
     var entry: EntryPoint? { get }
 
     func showSimpleNativeAlert(with messagge: String?, title: String?)
+    func showHome()
 }

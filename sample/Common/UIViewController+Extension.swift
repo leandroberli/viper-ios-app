@@ -19,6 +19,7 @@ extension UIViewController {
     func showActivityIndicator() {
         let indicator = UIActivityIndicatorView(style: .large)
         indicator.startAnimating()
+        indicator.color = .systemMint
         indicator.accessibilityIdentifier = "indicator"
         indicator.center = self.view.center
         self.view.addSubview(indicator)
