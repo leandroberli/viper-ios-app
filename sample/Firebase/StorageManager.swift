@@ -16,6 +16,7 @@ protocol StorageManagerProtocol {
 class StorageManager: StorageManagerProtocol {
     
     enum FileName: String {
+        //TODO: Review file format.
         case userProfilePhoto = "profilePhoto.png"
     }
     
@@ -25,7 +26,7 @@ class StorageManager: StorageManagerProtocol {
     
     let maxSize: Int64 = 10 * 1024 * 1024
     
-    // Create/update folder named with userId and create/update photo profile file.
+    // Create/update folder called with userId and create/update photo profile file.
     func uploadProfilePhotoForUser(withId: String, data: Data, completion: @escaping (Bool,Error?) -> Void) {
         //Get root reference
         let ref = Storage.storage().reference()

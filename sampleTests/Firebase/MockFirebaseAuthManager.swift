@@ -26,7 +26,7 @@ class MockFirebaseAuthManager: FirebaseAuthProtocol {
 
     func createUser(withEmail: String, password: String, completion: @escaping (User?, Error?) -> Void) {
         if error ?? false {
-            completion(nil, FirebaseAuthError.failed)
+            completion(nil, FirebaseAuthError.emailAlreadyInUse)
         } else {
             completion(nil, nil)
         }

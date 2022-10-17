@@ -22,7 +22,7 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
     }
     
     func registerSuccess() {
-        presenter?.router?.showSimpleNativeAlert(with: "Register success", title: "Created")
+        //presenter?.router?.showSimpleNativeAlert(with: "Register success", title: "Created")
     }
     
     func registerFailed(messagge: String) {

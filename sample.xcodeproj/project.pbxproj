@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3BF5A448C2D320F0E5564BF8 /* Pods_sampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E906298DCBFC7DFC28D698 /* Pods_sampleTests.framework */; };
 		9A3319AE28EE49CC00617232 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A3319AD28EE49CB00617232 /* GoogleService-Info.plist */; };
+		9A69002328FDC4BA00F591F8 /* StorageManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69002228FDC4BA00F591F8 /* StorageManagerTests.swift */; };
 		9A749F8928F5FD5900D06253 /* RegisterRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749F8828F5FD5900D06253 /* RegisterRouterProtocol.swift */; };
 		9A749F8E28F5FE8E00D06253 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749F8C28F5FE8E00D06253 /* EmailLoginViewController.swift */; };
 		9A749F8F28F5FE8E00D06253 /* EmailLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A749F8D28F5FE8E00D06253 /* EmailLoginViewController.xib */; };
@@ -78,6 +79,7 @@
 		58D1C89E283BF3C406450614 /* Pods_sample_sampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sample_sampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9756AAE6E019706BCFC6AEC3 /* Pods_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3319AD28EE49CB00617232 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9A69002228FDC4BA00F591F8 /* StorageManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManagerTests.swift; sourceTree = "<group>"; };
 		9A749F8828F5FD5900D06253 /* RegisterRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouterProtocol.swift; sourceTree = "<group>"; };
 		9A749F8C28F5FE8E00D06253 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		9A749F8D28F5FE8E00D06253 /* EmailLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailLoginViewController.xib; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 			children = (
 				9AA14FB028EEF99B006A3BDF /* MockFirebaseAuthManager.swift */,
 				9AA14FAA28EE56D4006A3BDF /* FirebaseAuthManagerTests.swift */,
+				9A69002228FDC4BA00F591F8 /* StorageManagerTests.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				9AA14FB128EEF99B006A3BDF /* MockFirebaseAuthManager.swift in Sources */,
 				9AA14FAB28EE56D4006A3BDF /* FirebaseAuthManagerTests.swift in Sources */,
 				9AA14FAD28EE61BD006A3BDF /* RegisterPresenterTests.swift in Sources */,
+				9A69002328FDC4BA00F591F8 /* StorageManagerTests.swift in Sources */,
 				9AA14FB328EEF9D3006A3BDF /* MockRegisterPresenter.swift in Sources */,
 				9AA14FAF28EE64E6006A3BDF /* RegisterInteractorTests.swift in Sources */,
 			);

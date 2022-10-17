@@ -19,6 +19,10 @@ class SplashInteractor: SplashInteractorProtocol {
     var firebaseAuth: FirebaseAuthProtocol?
     var presenter: SplashPresenterProtocol?
     
+    init(firebaseAuth: FirebaseAuthProtocol?) {
+        self.firebaseAuth = firebaseAuth
+    }
+    
     func getAuthenticathedUser() -> User? {
         return firebaseAuth?.getAuthentincathedUser()
     }    

@@ -91,7 +91,7 @@ final class RegisterPresenterTests: XCTestCase {
         let exp = self.expectation(description: "Register request when success should called success view")
         view.expectation = exp
         
-        sut.didFinishRegisterRequest(with: .failure(FirebaseAuthError.failed))
+        sut.didFinishRegisterRequest(with: .failure(FirebaseAuthError.emailAlreadyInUse))
         self.wait(for: [exp], timeout: 5)
         XCTAssertTrue(view.registerFailedCalled)
     }

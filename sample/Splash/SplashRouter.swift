@@ -16,12 +16,14 @@ protocol SplashRouterProtocol {
 }
 
 class SplashRouter: SplashRouterProtocol {
+    //Entry point is a Navigation controller. It works as main navigation.
     var entry: UINavigationController?
     
     init() {
+        //Root view controller for navigation controller.
         let view: SplashViewController = SplashViewController()
-        var interactor: SplashInteractorProtocol = SplashInteractor()
-        interactor.firebaseAuth = FirebaseAuthManager()
+        var interactor: SplashInteractorProtocol = SplashInteractor(firebaseAuth: FirebaseAuthManager())
+        
         let presenter: SplashPresenterProtocol = SplashPresenter(router: self, interactor: interactor, view: view)
         
         interactor.presenter = presenter
@@ -33,8 +35,9 @@ class SplashRouter: SplashRouterProtocol {
     
     func showLoginScreen() {
         let router = LoginRouter()
-        //TODO: Clean force unwrap.
-        let view = router.entry!
+        guard let view = router.entry else {
+            return
+        }
         entry?.pushViewController(view, animated: false)
     }
     
