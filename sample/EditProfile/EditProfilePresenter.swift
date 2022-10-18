@@ -13,7 +13,6 @@ protocol EditProfilePresenterProtocol {
     var storageManager: StorageManager? { get set }
     var authManager: FirebaseAuthProtocol? { get set }
     var router: EditProfileRouterProtocol? { get set }
-    //var sideMenuView: SideMenuViewController? { get set }
     var homeView: HomeViewController? { get set }
     
     func getUserProfilePhoto()
@@ -25,7 +24,6 @@ class EditProfilePresenter: NSObject, EditProfilePresenterProtocol {
     var storageManager: StorageManager?
     var authManager: FirebaseAuthProtocol?
     var view: EditProfileViewController?
-    //weak var sideMenuView: SideMenuViewController?
     weak var homeView: HomeViewController?
     var router: EditProfileRouterProtocol?
     var fromRegisterProcess = false

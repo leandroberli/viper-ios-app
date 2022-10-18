@@ -34,7 +34,8 @@ class ApodHTTPClient: ApodHTTPClientProtocol {
             if let data = data, let _ = String(data: data, encoding: .utf8) {
                 //print(string)
                 do {
-                    let post = try JSONDecoder().decode([Post].self, from: data)
+                    var post = try JSONDecoder().decode([Post].self, from: data)
+                    post.removeAll(where:  { $0.url.contains(".gif")})
                     completion(post,nil)
                 } catch {
                     print("JSON Error: ", error.localizedDescription)
