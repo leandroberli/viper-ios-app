@@ -30,6 +30,11 @@ class BaseTextfield: UITextField {
         self.bottomLine = CALayer()
         self.bottomLine.frame = CGRect(x: 0, y: height - bottomLineHeight, width: self.bounds.width, height: bottomLineHeight)
         self.bottomLine.backgroundColor = UIColor.lightGray.cgColor
-        self.layer.addSublayer(self.bottomLine)
+        self.layer.insertSublayer(self.bottomLine, at: 0)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.bottomLine.frame = CGRect(x: 0, y: height - bottomLineHeight, width: self.bounds.width, height: bottomLineHeight)
     }
 }

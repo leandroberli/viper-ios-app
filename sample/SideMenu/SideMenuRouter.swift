@@ -43,8 +43,9 @@ class SideMenuRouter: NSObject, SideMenuRouterProtocol {
         let router = EditProfileRouter()
         router.entry = view
         let presenter = EditProfilePresenter(storageManager: StorageManager(), view: view, authManager: FirebaseAuthManager(), router: router, databaseManager: DatabaseManager())
+        //Home reference for update user image,
+        presenter.homeView = homeView
         view.presenter = presenter
-        //editProfViewController.presenter?.homeView = homeView
         self.entry?.navigationController?.pushViewController(view, animated: true)
     }
 }
