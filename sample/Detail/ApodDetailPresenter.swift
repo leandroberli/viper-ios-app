@@ -14,7 +14,7 @@ protocol ApodDetailPresenterProtocol {
 
 class ApodDetailPresenter: ApodDetailPresenterProtocol {
     var data: Post?
-    var view: ApodDetailViewController?
+    weak var view: ApodDetailViewController?
     
     init(data: Post?, view: ApodDetailViewController?) {
         self.data = data
