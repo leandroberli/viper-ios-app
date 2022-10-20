@@ -39,11 +39,12 @@ class SideMenuRouter: NSObject, SideMenuRouterProtocol {
     }
     
     func showEditProfile(homeView: HomeViewController?) {
+        let view = EditProfileViewController()
         let router = EditProfileRouter()
-        guard let editProfViewController = router.entry else {
-            return
-        }
-        editProfViewController.presenter?.homeView = homeView
-        self.entry?.navigationController?.pushViewController(editProfViewController, animated: true)
+        router.entry = view
+        let presenter = EditProfilePresenter(storageManager: StorageManager(), view: view, authManager: FirebaseAuthManager(), router: router, databaseManager: DatabaseManager())
+        view.presenter = presenter
+        //editProfViewController.presenter?.homeView = homeView
+        self.entry?.navigationController?.pushViewController(view, animated: true)
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class KeyboardNotificationHandler {
-    var viewController: UIViewController?
+    weak var viewController: UIViewController?
     
     init(viewController: UIViewController) {
         self.viewController = viewController

@@ -18,13 +18,10 @@ protocol EditProfileRouterProtocol {
 
 class EditProfileRouter: EditProfileRouterProtocol {
 
-    var entry: EditProfileViewController?
+    weak var entry: EditProfileViewController?
     
     init(){
-        let viewController = EditProfileViewController()
-        let presenter = EditProfilePresenter(storageManager: StorageManager(), view: viewController, authManager: FirebaseAuthManager(), router: self, databaseManager: DatabaseManager())
-        viewController.presenter = presenter
-        self.entry = viewController
+        
     }
     
     func initImagePickerViewController(delegate: UIImagePickerControllerDelegate & UINavigationControllerDelegate) {
