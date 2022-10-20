@@ -14,6 +14,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         self.window = initSplashScreen(scene: scene)
+        
+        let enabled = UserDefaults.standard.bool(forKey: "darkMode")
+        self.window?.overrideUserInterfaceStyle = enabled ? .dark : .light
     }
     
     func initSplashScreen(scene: UIWindowScene) -> UIWindow {

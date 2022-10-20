@@ -12,6 +12,7 @@ class SideMenuViewController: UIViewController {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var editProfileButton: SimpleButton!
     @IBOutlet weak var logoutButton: LogoutButton!
+    @IBOutlet weak var darkModeSwitch: UISwitch!
     
     var presenter: SideMenuPresenter?
 
@@ -19,6 +20,9 @@ class SideMenuViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         setupUserImage()
+        
+        let enabled = UserDefaults.standard.bool(forKey: "darkMode")
+        darkModeSwitch.isOn = enabled
     }
     
     override func viewWillLayoutSubviews() {
@@ -45,5 +49,14 @@ class SideMenuViewController: UIViewController {
     
     @IBAction func logoutAction(_ sender: Any) {
         presenter?.didSelectLogOut()
+    }
+    
+    @IBAction func darkModeAction(_ sender: Any) {
+        let enabled = UserDefaults.standard.bool(forKey: "darkMode")
+        UserDefaults.standard.set(!enabled, forKey: "darkMode")
+        
+        darkModeSwitch.isOn = !darkModeSwitch.isOn
+        
+        UIApplication.shared.keyWindow?.overrideUserInterfaceStyle = darkModeSwitch.isOn ? .dark : .light
     }
 }
