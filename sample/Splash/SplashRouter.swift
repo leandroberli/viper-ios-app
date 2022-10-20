@@ -35,9 +35,11 @@ class SplashRouter: SplashRouterProtocol {
     
     func showLoginScreen() {
         let router = LoginRouter()
-        guard let view = router.entry else {
-            return
-        }
+        let view = EmailLoginViewController()
+        router.entry = view
+        let interactor = LoginInteractor(authManager: FirebaseAuthManager())
+        let presenter = LoginPresenter(view: view, router: router, interactor: interactor)
+        view.presenter = presenter
         entry?.pushViewController(view, animated: false)
     }
     

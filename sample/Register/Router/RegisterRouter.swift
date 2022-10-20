@@ -48,10 +48,8 @@ class RegisterRouter: RegisterRouterProtocol {
     
     func showEditProfile() {
         let router = EditProfileRouter()
-        //Get view controller created in router constructor.
-        guard let view = router.entry else {
-            return
-        }
+        let view = EditProfileViewController()
+        router.entry = view
         let presenter = EditProfilePresenter(storageManager: StorageManager(), view: view, authManager: FirebaseAuthManager(), router: router, databaseManager: DatabaseManager())
         //Register flow flag.
         presenter.fromRegisterProcess = true

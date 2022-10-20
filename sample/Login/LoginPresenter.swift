@@ -24,7 +24,7 @@ class LoginPresenter: LoginPresenterProtocol {
     var router: LoginRouterProtocol?
     var interactor: LoginInteractorProtocol?
     
-    init(view: EmailLoginViewProtocol? = nil, router: LoginRouterProtocol? = nil, interactor: LoginInteractorProtocol? = nil) {
+    init(view: EmailLoginViewProtocol, router: LoginRouterProtocol?, interactor: LoginInteractorProtocol?) {
         self.view = view
         self.router = router
         self.interactor = interactor

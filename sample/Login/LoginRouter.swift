@@ -18,16 +18,6 @@ protocol LoginRouterProtocol {
 class LoginRouter: LoginRouterProtocol {
     var entry: EmailLoginViewController?
     
-    init() {
-        let loginViewController: EmailLoginViewController = EmailLoginViewController()
-        var interactor: LoginInteractorProtocol = LoginInteractor(authManager: FirebaseAuthManager())
-        let presenter: LoginPresenterProtocol = LoginPresenter(view: loginViewController, router: self, interactor: interactor)
-        interactor.presenter = presenter
-        loginViewController.presenter = presenter
-        
-        self.entry = loginViewController
-    }
-    
     func showRegisterFormScreen() {
         let router = RegisterRouter()
         entry?.navigationController?.pushViewController(router.entry as! RegisterViewController, animated: true)
