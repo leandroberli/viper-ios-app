@@ -99,7 +99,7 @@ class LogoutButton: UIButton {
 class SimpleButton: UIButton {
     
     var fontSize = 14.0
-    var titleColor = UIColor.black
+    var titleColor = UIColor.systemGray2
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)

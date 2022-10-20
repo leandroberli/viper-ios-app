@@ -49,6 +49,7 @@
 		9A749FCB28F8898F00D06253 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FCA28F8898F00D06253 /* StorageManager.swift */; };
 		9A7CBECA2900478300436F85 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7CBEC92900478300436F85 /* Utils.swift */; };
 		9A86E8692900ACD300C7A5A9 /* KeyboardNotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A86E8682900ACD300C7A5A9 /* KeyboardNotificationHandler.swift */; };
+		9A9A88012901D71E0044B871 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A88002901D71E0044B871 /* UIImage+Extension.swift */; };
 		9A9C30AB28EE081A00015B19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C30AA28EE081A00015B19 /* AppDelegate.swift */; };
 		9A9C30AD28EE081A00015B19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C30AC28EE081A00015B19 /* SceneDelegate.swift */; };
 		9A9C30B428EE081B00015B19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A9C30B328EE081B00015B19 /* Assets.xcassets */; };
@@ -128,6 +129,7 @@
 		9A749FCA28F8898F00D06253 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		9A7CBEC92900478300436F85 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		9A86E8682900ACD300C7A5A9 /* KeyboardNotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationHandler.swift; sourceTree = "<group>"; };
+		9A9A88002901D71E0044B871 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		9A9C30A728EE081A00015B19 /* sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9C30AA28EE081A00015B19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A9C30AC28EE081A00015B19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -458,6 +460,7 @@
 				9A749FA528F6F5E500D06253 /* UIViewController+Extension.swift */,
 				9A7CBEC92900478300436F85 /* Utils.swift */,
 				9A86E8682900ACD300C7A5A9 /* KeyboardNotificationHandler.swift */,
+				9A9A88002901D71E0044B871 /* UIImage+Extension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -692,6 +695,7 @@
 				9A749FC328F84DF600D06253 /* ApodDetailViewController.swift in Sources */,
 				9A749F9628F6003F00D06253 /* SplashRouter.swift in Sources */,
 				9A749FB028F737E400D06253 /* Post.swift in Sources */,
+				9A9A88012901D71E0044B871 /* UIImage+Extension.swift in Sources */,
 				9A749F9328F5FF7900D06253 /* SplashViewController.swift in Sources */,
 				9A749FAC28F7335400D06253 /* HomeRouter.swift in Sources */,
 				9A69002728FDCE3500F591F8 /* EditProfileViewController.swift in Sources */,
