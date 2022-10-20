@@ -23,7 +23,7 @@ final class FirebaseAuthManagerTests: XCTestCase {
     func testSuccessNewUserCreation_shouldResponseUserData() throws {
         let expectation = self.expectation(description: "Expect user data")
         
-        let name = randomString(length: 8)
+        let name = Utils().randomString(length: 8)
         sut.createUser(withEmail: "\(name)@gmail.com", password: "123123") { user, error in
             XCTAssertNotNil(user)
             expectation.fulfill()
@@ -41,11 +41,6 @@ final class FirebaseAuthManagerTests: XCTestCase {
         }
         
         self.wait(for: [expectation], timeout: 5)
-    }
-    
-    func randomString(length: Int) -> String {
-      let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-      return String((0..<length).map{ _ in letters.randomElement()! })
     }
 
 }

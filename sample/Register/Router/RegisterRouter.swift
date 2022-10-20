@@ -15,7 +15,7 @@ class RegisterRouter: RegisterRouterProtocol {
     
     init() {
         let registerView = RegisterViewController()
-        var interactor: RegisterInteractorProtocol = RegisterInteractor(authManager: FirebaseAuthManager())
+        var interactor: RegisterInteractorProtocol = RegisterInteractor(authManager: FirebaseAuthManager(), dbManager: DatabaseManager())
         let validator = RegisterDataValidator()
         
         let presenter: RegisterPresenterProtocol = RegisterPresenter(interactor: interactor, view: registerView, router: self, dataValidator: validator)
@@ -52,7 +52,7 @@ class RegisterRouter: RegisterRouterProtocol {
         guard let view = router.entry else {
             return
         }
-        let presenter = EditProfilePresenter(storageManager: StorageManager(), view: view, authManager: FirebaseAuthManager(), router: router)
+        let presenter = EditProfilePresenter(storageManager: StorageManager(), view: view, authManager: FirebaseAuthManager(), router: router, databaseManager: DatabaseManager())
         //Register flow flag.
         presenter.fromRegisterProcess = true
         view.presenter = presenter

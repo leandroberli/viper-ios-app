@@ -17,20 +17,25 @@ protocol EditProfilePresenterProtocol {
     
     func getUserProfilePhoto()
     func didSelectChangePhoto()
-    func didSelectSave()
+    func didSelectSave(name: String)
+    func saveUserData(name: String)
+    func getUserData()
 }
 
+//TODO: Create interactor.
 class EditProfilePresenter: NSObject, EditProfilePresenterProtocol {
+    var databaseManager: DatabaseManager?
     var storageManager: StorageManager?
     var authManager: FirebaseAuthProtocol?
-    var view: EditProfileViewController?
+    weak var view: EditProfileViewController?
     weak var homeView: HomeViewController?
     var router: EditProfileRouterProtocol?
     var fromRegisterProcess = false
     
-    init(storageManager: StorageManager, view: EditProfileViewController, authManager: FirebaseAuthProtocol, router: EditProfileRouterProtocol?) {
+    init(storageManager: StorageManager, view: EditProfileViewController, authManager: FirebaseAuthProtocol, router: EditProfileRouterProtocol?, databaseManager: DatabaseManager) {
         super.init()
         
+        self.databaseManager = databaseManager
         self.storageManager = storageManager
         self.view = view
         self.authManager = authManager
@@ -39,7 +44,7 @@ class EditProfilePresenter: NSObject, EditProfilePresenterProtocol {
     
     func getUserProfilePhoto() {
         let withId = self.authManager?.getAuthentincathedUser()?.uid ?? ""
-        self.storageManager?.getImageProfilePhotoUser(withId: withId) { image, error in
+        storageManager?.getImageProfilePhotoUser(withId: withId) { image, error in
             DispatchQueue.main.async {
                 self.view?.updatePhotoProfile(image)
             }
@@ -50,11 +55,37 @@ class EditProfilePresenter: NSObject, EditProfilePresenterProtocol {
         self.router?.initImagePickerViewController(delegate: self)
     }
     
-    func didSelectSave() {
+    func didSelectSave(name: String) {
+        saveUserData(name: name)
         if !fromRegisterProcess {
-            self.router?.popEntry()
+            router?.popEntry()
         } else {
-            self.router?.showHomeViewController()
+            router?.showHomeViewController()
+        }
+    }
+    
+    //Save/update user in database.
+    func saveUserData(name: String) {
+        guard let user = authManager?.getAuthentincathedUser(),
+              let email = user.email else {
+            return
+        }
+        var customUser = CustomUser(uid: user.uid, email: email)
+        customUser.name = name.isEmpty ? nil : name
+        databaseManager?.saveUser(withId: customUser.uid, data: customUser)
+    }
+    
+    //Get user data and update form
+    func getUserData() {
+        guard let userId = authManager?.getAuthentincathedUser()?.uid else {
+            return
+        }
+        databaseManager?.getUser(withId: userId) { user, error in
+            if let u = user {
+                DispatchQueue.main.async {
+                    self.view?.updateUserInfo(u)
+                }
+            }
         }
     }
 }
@@ -67,7 +98,7 @@ extension EditProfilePresenter: UIImagePickerControllerDelegate, UINavigationCon
             print("Error in: \(#function)")
             return
         }
-        self.didReceivedProfileImage(editedImage)
+        didReceivedProfileImage(editedImage)
         picker.dismiss(animated: true)
     }
     
@@ -75,17 +106,17 @@ extension EditProfilePresenter: UIImagePickerControllerDelegate, UINavigationCon
     func didReceivedProfileImage(_ image: UIImage) {
         startUploadProfileImageProcess(image)
         view?.updatePhotoProfile(image)
-        self.homeView?.updateUserProfileImage(image: image)
+        homeView?.updateUserProfileImage(image: image)
     }
     
     //Upload to firebase storage.
     func startUploadProfileImageProcess(_ image: UIImage) {
-        guard let data = image.pngData(), let user = FirebaseAuthManager().getAuthentincathedUser() else {
+        guard let data = image.pngData(), let user = authManager?.getAuthentincathedUser() else {
             return
         }
-        StorageManager().uploadProfilePhotoForUser(withId: user.uid, data: data) { success, error in
+        storageManager?.uploadProfilePhotoForUser(withId: user.uid, data: data) { success, error in
             if success {
-                //Image uploaded
+                print("User profile photo uploaded")
             } else {
                 print(error?.localizedDescription ?? "")
             }

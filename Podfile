@@ -10,15 +10,12 @@ target 'sample' do
   pod 'FirebaseCore'
   pod 'FirebaseFirestore'
   pod 'FirebaseStorage'
+  pod 'FirebaseFirestoreSwift'
   pod 'Kingfisher'
   pod 'SideMenu'
 
   target 'sampleTests' do
     inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'sampleUITests' do
     # Pods for testing
   end
 

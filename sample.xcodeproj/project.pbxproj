@@ -14,6 +14,9 @@
 		9A69002828FDCE3500F591F8 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A69002628FDCE3500F591F8 /* EditProfileViewController.xib */; };
 		9A69002A28FDD03E00F591F8 /* EditProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69002928FDD03E00F591F8 /* EditProfilePresenter.swift */; };
 		9A69002C28FDD4C200F591F8 /* EditProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69002B28FDD4C200F591F8 /* EditProfileRouter.swift */; };
+		9A69002E28FEF1EA00F591F8 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69002D28FEF1EA00F591F8 /* DatabaseManager.swift */; };
+		9A69003228FEF7B900F591F8 /* DatabaseManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69003128FEF7B900F591F8 /* DatabaseManagerTests.swift */; };
+		9A69003428FF007600F591F8 /* CustomUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69003328FF007600F591F8 /* CustomUser.swift */; };
 		9A749F8928F5FD5900D06253 /* RegisterRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749F8828F5FD5900D06253 /* RegisterRouterProtocol.swift */; };
 		9A749F8E28F5FE8E00D06253 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749F8C28F5FE8E00D06253 /* EmailLoginViewController.swift */; };
 		9A749F8F28F5FE8E00D06253 /* EmailLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A749F8D28F5FE8E00D06253 /* EmailLoginViewController.xib */; };
@@ -44,6 +47,8 @@
 		9A749FC628F84FA500D06253 /* ApodDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FC528F84FA500D06253 /* ApodDetailPresenter.swift */; };
 		9A749FC928F8603F00D06253 /* Textfields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FC828F8603F00D06253 /* Textfields.swift */; };
 		9A749FCB28F8898F00D06253 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A749FCA28F8898F00D06253 /* StorageManager.swift */; };
+		9A7CBECA2900478300436F85 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7CBEC92900478300436F85 /* Utils.swift */; };
+		9A86E8692900ACD300C7A5A9 /* KeyboardNotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A86E8682900ACD300C7A5A9 /* KeyboardNotificationHandler.swift */; };
 		9A9C30AB28EE081A00015B19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C30AA28EE081A00015B19 /* AppDelegate.swift */; };
 		9A9C30AD28EE081A00015B19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C30AC28EE081A00015B19 /* SceneDelegate.swift */; };
 		9A9C30B428EE081B00015B19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A9C30B328EE081B00015B19 /* Assets.xcassets */; };
@@ -88,6 +93,9 @@
 		9A69002628FDCE3500F591F8 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		9A69002928FDD03E00F591F8 /* EditProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenter.swift; sourceTree = "<group>"; };
 		9A69002B28FDD4C200F591F8 /* EditProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileRouter.swift; sourceTree = "<group>"; };
+		9A69002D28FEF1EA00F591F8 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		9A69003128FEF7B900F591F8 /* DatabaseManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManagerTests.swift; sourceTree = "<group>"; };
+		9A69003328FF007600F591F8 /* CustomUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUser.swift; sourceTree = "<group>"; };
 		9A749F8828F5FD5900D06253 /* RegisterRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouterProtocol.swift; sourceTree = "<group>"; };
 		9A749F8C28F5FE8E00D06253 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		9A749F8D28F5FE8E00D06253 /* EmailLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailLoginViewController.xib; sourceTree = "<group>"; };
@@ -118,6 +126,8 @@
 		9A749FC528F84FA500D06253 /* ApodDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodDetailPresenter.swift; sourceTree = "<group>"; };
 		9A749FC828F8603F00D06253 /* Textfields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textfields.swift; sourceTree = "<group>"; };
 		9A749FCA28F8898F00D06253 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		9A7CBEC92900478300436F85 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		9A86E8682900ACD300C7A5A9 /* KeyboardNotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationHandler.swift; sourceTree = "<group>"; };
 		9A9C30A728EE081A00015B19 /* sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9C30AA28EE081A00015B19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A9C30AC28EE081A00015B19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -262,12 +272,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		9A749FB628F74A5C00D06253 /* Entities */ = {
+		9A749FB628F74A5C00D06253 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				9A749FAF28F737E400D06253 /* Post.swift */,
 			);
-			path = Entities;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9A749FB728F74D1200D06253 /* SideMenu */ = {
@@ -300,6 +310,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		9A86E8672900A84600C7A5A9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9A69003328FF007600F591F8 /* CustomUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		9A9C309E28EE081A00015B19 = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +342,7 @@
 		9A9C30A928EE081A00015B19 /* sample */ = {
 			isa = PBXGroup;
 			children = (
+				9A86E8672900A84600C7A5A9 /* Models */,
 				9AB7CB0728F0800000C2F47A /* Common */,
 				9AA14FA628EE4BB3006A3BDF /* Firebase */,
 				9A749F9028F5FF5D00D06253 /* Splash */,
@@ -390,6 +409,7 @@
 			children = (
 				9AA14FA728EE4BDC006A3BDF /* FirebaseAuthManager.swift */,
 				9A749FCA28F8898F00D06253 /* StorageManager.swift */,
+				9A69002D28FEF1EA00F591F8 /* DatabaseManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -400,6 +420,7 @@
 				9AA14FB028EEF99B006A3BDF /* MockFirebaseAuthManager.swift */,
 				9AA14FAA28EE56D4006A3BDF /* FirebaseAuthManagerTests.swift */,
 				9A69002228FDC4BA00F591F8 /* StorageManagerTests.swift */,
+				9A69003128FEF7B900F591F8 /* DatabaseManagerTests.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -407,7 +428,7 @@
 		9AA14FB428EEFCD8006A3BDF /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				9A749FB628F74A5C00D06253 /* Entities */,
+				9A749FB628F74A5C00D06253 /* Models */,
 				9A749FB128F740E400D06253 /* View */,
 				9A749FA728F7331900D06253 /* HomePresenter.swift */,
 				9A749FA928F7333500D06253 /* HomeInteractor.swift */,
@@ -435,6 +456,8 @@
 				9AB7CB0828F0802200C2F47A /* Buttons.swift */,
 				9A749FC828F8603F00D06253 /* Textfields.swift */,
 				9A749FA528F6F5E500D06253 /* UIViewController+Extension.swift */,
+				9A7CBEC92900478300436F85 /* Utils.swift */,
+				9A86E8682900ACD300C7A5A9 /* KeyboardNotificationHandler.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -642,9 +665,11 @@
 				9A749F8E28F5FE8E00D06253 /* EmailLoginViewController.swift in Sources */,
 				9A749FB428F7410B00D06253 /* HomePostTableViewCell.swift in Sources */,
 				9A749FCB28F8898F00D06253 /* StorageManager.swift in Sources */,
+				9A69003428FF007600F591F8 /* CustomUser.swift in Sources */,
 				9A69002A28FDD03E00F591F8 /* EditProfilePresenter.swift in Sources */,
 				9A749FA228F6EEB300D06253 /* LoginInteractor.swift in Sources */,
 				9A749FC928F8603F00D06253 /* Textfields.swift in Sources */,
+				9A86E8692900ACD300C7A5A9 /* KeyboardNotificationHandler.swift in Sources */,
 				9A749F9D28F639DA00D06253 /* HomeViewController.swift in Sources */,
 				9A749FC628F84FA500D06253 /* ApodDetailPresenter.swift in Sources */,
 				9A9C30EC28EE2D2200015B19 /* RegisterInteractor.swift in Sources */,
@@ -654,6 +679,7 @@
 				9A749FAA28F7333500D06253 /* HomeInteractor.swift in Sources */,
 				9A749FC028F8441F00D06253 /* SideMenuRouter.swift in Sources */,
 				9A9C30F028EE2D5100015B19 /* RegisterRouter.swift in Sources */,
+				9A7CBECA2900478300436F85 /* Utils.swift in Sources */,
 				9A749FA428F6F2FE00D06253 /* LoginRouter.swift in Sources */,
 				9AD9C34528F5B0C500CEE4ED /* RegisterDataValidator.swift in Sources */,
 				9AB7CB0428F05AC200C2F47A /* RegisterInteractorProtocol.swift in Sources */,
@@ -670,6 +696,7 @@
 				9A749FAC28F7335400D06253 /* HomeRouter.swift in Sources */,
 				9A69002728FDCE3500F591F8 /* EditProfileViewController.swift in Sources */,
 				9A749F9828F6076C00D06253 /* SplashPresenter.swift in Sources */,
+				9A69002E28FEF1EA00F591F8 /* DatabaseManager.swift in Sources */,
 				9A749FBE28F8441300D06253 /* SideMenuPresenter.swift in Sources */,
 				9A9C30EE28EE2D3400015B19 /* RegisterPresenter.swift in Sources */,
 				9AB7CB0628F05AEE00C2F47A /* RegisterViewProtocol.swift in Sources */,
@@ -688,6 +715,7 @@
 				9AA14FAB28EE56D4006A3BDF /* FirebaseAuthManagerTests.swift in Sources */,
 				9AA14FAD28EE61BD006A3BDF /* RegisterPresenterTests.swift in Sources */,
 				9A69002328FDC4BA00F591F8 /* StorageManagerTests.swift in Sources */,
+				9A69003228FEF7B900F591F8 /* DatabaseManagerTests.swift in Sources */,
 				9AA14FB328EEF9D3006A3BDF /* MockRegisterPresenter.swift in Sources */,
 				9AA14FAF28EE64E6006A3BDF /* RegisterInteractorTests.swift in Sources */,
 			);

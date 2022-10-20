@@ -11,25 +11,42 @@ class EditProfileViewController: UIViewController {
     
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var nameTextfiled: BaseTextfield!
+    @IBOutlet weak var emailTextfield: BaseTextfield!
+    @IBOutlet weak var idTextfield: BaseTextfield!
     @IBOutlet weak var changePhotoButton: SimpleButton!
     
     var presenter: EditProfilePresenterProtocol?
+    var keyboardHandler: KeyboardNotificationHandler?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.subviews.forEach({ $0.isHidden = true })
+        self.showActivityIndicator()
+        
+        keyboardHandler = KeyboardNotificationHandler(viewController: self)
+        keyboardHandler?.suscribeToKeyboardWillShowNotif()
+        
         presenter?.getUserProfilePhoto()
+        presenter?.getUserData()
     }
     
     func updatePhotoProfile(_ image: UIImage?) {
         self.userImage.image = image
     }
-
-
+    
+    func updateUserInfo(_ user: CustomUser) {
+        self.view.subviews.forEach({ $0.isHidden = false })
+        self.removeActivityIndicator()
+        nameTextfiled.text = user.name
+        idTextfield.text = user.uid
+        emailTextfield.text = user.email
+    }
+    
     @IBAction func changePhotoAction(_ sender: Any) {
         self.presenter?.didSelectChangePhoto()
     }
     
     @IBAction func saveAction(_ sender: Any) {
-        self.presenter?.didSelectSave()
+        self.presenter?.didSelectSave(name: nameTextfiled.text ?? "" )
     }
 }

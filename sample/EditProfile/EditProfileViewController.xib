@@ -11,6 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditProfileViewController" customModule="sample" customModuleProvider="target">
             <connections>
                 <outlet property="changePhotoButton" destination="mHP-Tg-74c" id="jLR-FB-CXm"/>
+                <outlet property="emailTextfield" destination="8pV-lr-nVT" id="5nb-19-CMv"/>
+                <outlet property="idTextfield" destination="DQn-9b-v8K" id="LfU-ar-9lR"/>
                 <outlet property="nameTextfiled" destination="kFO-EK-BnS" id="xOk-uY-SbG"/>
                 <outlet property="userImage" destination="9xA-WF-CXh" id="4d8-61-qUD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -45,7 +47,7 @@
                             </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="G0R-eA-Gv4">
-                            <rect key="frame" x="0.0" y="210" width="390" height="168.66666666666663"/>
+                            <rect key="frame" x="0.0" y="210" width="390" height="253"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Frg-zN-QTF">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="84.333333333333329"/>
@@ -56,8 +58,9 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="41AyJV24zHRS3xeU0CDsUtQl01S2" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DQn-9b-v8K" customClass="BaseTextfield" customModule="sample" customModuleProvider="target">
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DQn-9b-v8K" customClass="BaseTextfield" customModule="sample" customModuleProvider="target">
                                             <rect key="frame" x="15" y="34" width="360" height="42.333333333333343"/>
+                                            <color key="textColor" systemColor="systemGray2Color"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
@@ -73,8 +76,35 @@
                                         <constraint firstItem="VFt-x4-z7Y" firstAttribute="leading" secondItem="Frg-zN-QTF" secondAttribute="leading" constant="15" id="ysu-P5-RCe"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Znj-Sa-b8S">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9O-jW-LzT">
                                     <rect key="frame" x="0.0" y="84.333333333333314" width="390" height="84.333333333333314"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGG-t7-MXd">
+                                            <rect key="frame" x="15" y="14" width="360" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8pV-lr-nVT" customClass="BaseTextfield" customModule="sample" customModuleProvider="target">
+                                            <rect key="frame" x="15" y="34" width="360" height="42.333333333333343"/>
+                                            <color key="textColor" systemColor="systemGray2Color"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="8pV-lr-nVT" secondAttribute="bottom" constant="8" id="nI5-0Y-3dk"/>
+                                        <constraint firstItem="HGG-t7-MXd" firstAttribute="top" secondItem="g9O-jW-LzT" secondAttribute="top" constant="14" id="nbY-iS-WJa"/>
+                                        <constraint firstItem="8pV-lr-nVT" firstAttribute="top" secondItem="HGG-t7-MXd" secondAttribute="bottom" constant="3" id="pCE-al-mep"/>
+                                        <constraint firstItem="HGG-t7-MXd" firstAttribute="leading" secondItem="g9O-jW-LzT" secondAttribute="leading" constant="15" id="pn5-M8-EL2"/>
+                                        <constraint firstItem="8pV-lr-nVT" firstAttribute="leading" secondItem="g9O-jW-LzT" secondAttribute="leading" constant="15" id="poD-up-Eaf"/>
+                                        <constraint firstAttribute="trailing" secondItem="HGG-t7-MXd" secondAttribute="trailing" constant="15" id="qW5-Ud-0EE"/>
+                                        <constraint firstAttribute="trailing" secondItem="8pV-lr-nVT" secondAttribute="trailing" constant="15" id="tfq-qk-mUY"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Znj-Sa-b8S">
+                                    <rect key="frame" x="0.0" y="168.66666666666669" width="390" height="84.333333333333314"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZV-8l-g0P">
                                             <rect key="frame" x="15" y="14" width="360" height="17"/>
@@ -82,7 +112,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Leandro B" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kFO-EK-BnS" customClass="BaseTextfield" customModule="sample" customModuleProvider="target">
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kFO-EK-BnS" customClass="BaseTextfield" customModule="sample" customModuleProvider="target">
                                             <rect key="frame" x="15" y="34" width="360" height="42.333333333333343"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -141,6 +171,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

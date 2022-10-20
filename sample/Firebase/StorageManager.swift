@@ -46,18 +46,6 @@ class StorageManager: StorageManagerProtocol {
         }
     }
     
-    //Get user profile photo URL.
-    func getURLProfilePhotoForUser(withId: String, completion: @escaping (URL?,Error?) -> Void) {
-        let ref = Storage.storage().reference().child(withId + "/\(FileName.userProfilePhoto.rawValue)")
-        ref.downloadURL { url, error in
-            guard let url = url else {
-                completion(nil,error)
-                return
-            }
-            completion(url,nil)
-        }
-    }
-    
     //Get user profile UIImage.
     func getImageProfilePhotoUser(withId: String, completion: @escaping (UIImage?, Error?) -> Void) {
         let ref = Storage.storage().reference().child(withId + "/\(FileName.userProfilePhoto.rawValue)")

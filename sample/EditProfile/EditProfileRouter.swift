@@ -22,7 +22,7 @@ class EditProfileRouter: EditProfileRouterProtocol {
     
     init(){
         let viewController = EditProfileViewController()
-        let presenter = EditProfilePresenter(storageManager: StorageManager(), view: viewController, authManager: FirebaseAuthManager(), router: self)
+        let presenter = EditProfilePresenter(storageManager: StorageManager(), view: viewController, authManager: FirebaseAuthManager(), router: self, databaseManager: DatabaseManager())
         viewController.presenter = presenter
         self.entry = viewController
     }

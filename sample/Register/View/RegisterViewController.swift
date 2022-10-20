@@ -19,6 +19,9 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
         super.viewDidLoad()
         registerButton.changeDisabled()
         passwordTextfield.isSecureTextEntry = true
+        
+        emailTextfield.text = Utils().randomString(length: 8) + "@gmail.com"
+        passwordTextfield.text = "lalala"
     }
     
     func registerSuccess() {
