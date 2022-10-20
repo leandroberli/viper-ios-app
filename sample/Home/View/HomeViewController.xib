@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,6 +13,7 @@
             <connections>
                 <outlet property="profileButton" destination="vkJ-dh-Ohk" id="uQq-di-Up5"/>
                 <outlet property="tableView" destination="p1y-zC-wfa" id="tuC-cx-CdP"/>
+                <outlet property="topBarNameLabel" destination="YcQ-Hy-nnc" id="gMF-Ey-quV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,11 +37,19 @@
                                 <action selector="sideMenuAction:" destination="-1" eventType="touchUpInside" id="Mi8-xg-aSh"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcQ-Hy-nnc">
+                            <rect key="frame" x="53" y="22" width="0.0" height="0.0"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="vkJ-dh-Ohk" firstAttribute="leading" secondItem="p6r-wD-KuX" secondAttribute="leading" constant="10" id="3f4-UC-6iR"/>
+                        <constraint firstItem="YcQ-Hy-nnc" firstAttribute="leading" secondItem="vkJ-dh-Ohk" secondAttribute="trailing" constant="8" id="4K5-0U-xSX"/>
                         <constraint firstAttribute="height" constant="44" id="N9I-Vm-fle"/>
+                        <constraint firstItem="YcQ-Hy-nnc" firstAttribute="centerY" secondItem="vkJ-dh-Ohk" secondAttribute="centerY" id="TFB-0c-HyZ"/>
                         <constraint firstItem="vkJ-dh-Ohk" firstAttribute="centerY" secondItem="p6r-wD-KuX" secondAttribute="centerY" id="cCi-zc-r7U"/>
                     </constraints>
                 </view>
@@ -59,7 +69,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="p6r-wD-KuX" secondAttribute="trailing" id="pQn-0A-2DW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="p1y-zC-wfa" secondAttribute="bottom" id="x5V-nd-9uU"/>
             </constraints>
-            <point key="canvasLocation" x="128" y="21"/>
+            <point key="canvasLocation" x="127.69230769230769" y="20.616113744075829"/>
         </view>
     </objects>
     <resources>

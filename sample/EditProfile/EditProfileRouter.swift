@@ -36,7 +36,7 @@ class EditProfileRouter: EditProfileRouterProtocol {
     func showHomeViewController() {
         let homeView = HomeViewController()
         let router = HomeRouter()
-        let interactor = HomeInteractor(httpClient: ApodHTTPClient())
+        let interactor = HomeInteractor(httpClient: ApodHTTPClient(), dbManager: DatabaseManager())
         let presenter = HomePresenter(view: homeView, interactor: interactor, router: router)
         homeView.presenter = presenter
         router.entry = homeView

@@ -72,6 +72,7 @@ class EditProfilePresenter: NSObject, EditProfilePresenterProtocol {
         }
         var customUser = CustomUser(uid: user.uid, email: email)
         customUser.name = name.isEmpty ? nil : name
+        homeView?.updateTopBarNameLabel("Hi, " + (customUser.name ?? "") + "!")
         databaseManager?.saveUser(withId: customUser.uid, data: customUser)
     }
     

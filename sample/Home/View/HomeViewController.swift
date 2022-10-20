@@ -11,12 +11,14 @@ protocol HomeViewProtocol {
     var presenter: HomePresenterProtocol? { get set }
     
     func refreshTable(withPosts: [Post])
+    func updateTopBarNameLabel(_ text: String)
 }
 
 class HomeViewController: UIViewController, HomeViewProtocol {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profileButton: UIButton!
+    @IBOutlet weak var topBarNameLabel: UILabel!
     
     var presenter: HomePresenterProtocol?
     var posts: [Post] = []
@@ -33,7 +35,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         profileButton.layer.borderColor = UIColor.systemMint.cgColor
         
         presenter?.getApods()
-        presenter?.getUserProfileImage()
+        presenter?.getUserInfo()
     }
     
     private func setupTable() {
@@ -85,6 +87,10 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     //Called from presenter
     func updateUserProfileImage(image: UIImage) {
         profileButton.setBackgroundImage(image, for: .normal)
+    }
+    
+    func updateTopBarNameLabel(_ text: String) {
+        topBarNameLabel.text = text
     }
 
     @IBAction func sideMenuAction(_ sender: Any) {

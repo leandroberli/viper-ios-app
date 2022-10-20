@@ -14,7 +14,7 @@ protocol HomePresenterProtocol {
     var router: HomeRouterProtocol? { get set }
     
     func getApods()
-    func getUserProfileImage()
+    func getUserInfo()
     func showSideMenu()
     func didSelectItem(_ post: Post)
 }
@@ -37,15 +37,30 @@ class HomePresenter: HomePresenterProtocol {
         }
     }
     
-    //Get user profile image and update view.
-    func getUserProfileImage() {
-        guard let currentUser = FirebaseAuthManager().getAuthentincathedUser() else {
+    func getUserInfo() {
+        guard let id = FirebaseAuthManager().getAuthentincathedUser()?.uid else {
             return
         }
-        interactor?.getUserProfileImage(withId: currentUser.uid) { image in
+        getUserProfileImage(withId: id)
+        getUserData(withId: id)
+    }
+    
+    //Get user profile image and update view.
+    func getUserProfileImage(withId: String) {
+        interactor?.getUserProfileImage(withId: withId) { image in
             DispatchQueue.main.async {
                 if let img = image {
                     self.view?.updateUserProfileImage(image: img)
+                }
+            }
+        }
+    }
+    
+    func getUserData(withId: String) {
+        interactor?.getUserData(withId: withId) { user, error in
+            if let name = user?.name {
+                DispatchQueue.main.async {
+                    self.view?.updateTopBarNameLabel("Hi, " + name + "!")
                 }
             }
         }
