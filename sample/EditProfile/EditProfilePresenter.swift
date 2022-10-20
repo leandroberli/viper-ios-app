@@ -46,7 +46,8 @@ class EditProfilePresenter: NSObject, EditProfilePresenterProtocol {
         let withId = self.authManager?.getAuthentincathedUser()?.uid ?? ""
         storageManager?.getImageProfilePhotoUser(withId: withId) { image, error in
             DispatchQueue.main.async {
-                self.view?.updatePhotoProfile(image)
+                let finalImage = image ?? UIImage(systemName: "person.fill")
+                self.view?.updatePhotoProfile(finalImage)
             }
         }
     }
@@ -106,8 +107,6 @@ extension EditProfilePresenter: UIImagePickerControllerDelegate, UINavigationCon
     //Received image from picker, upload data and update views.
     func didReceivedProfileImage(_ image: UIImage) {
         startUploadProfileImageProcess(image)
-        view?.updatePhotoProfile(image)
-        homeView?.updateUserProfileImage(image: image)
     }
     
     //Upload to firebase storage.
@@ -116,12 +115,25 @@ extension EditProfilePresenter: UIImagePickerControllerDelegate, UINavigationCon
             return
         }
         storageManager?.uploadProfilePhotoForUser(withId: user.uid, data: data) { success, error in
+            var newImage = image
             if success {
                 print("User profile photo uploaded")
+                self.view?.updatePhotoProfile(newImage)
+                self.homeView?.updateUserProfileImage(image: newImage)
             } else {
-                print(error?.localizedDescription ?? "")
+                DispatchQueue.main.async {
+                    print(error?.localizedDescription ?? "")
+                    self.showNativeAlertOnView(message: error?.localizedDescription ?? "", title: "Error")
+                    newImage = UIImage(systemName: "person.fill")!
+                    self.view?.updatePhotoProfile(newImage)
+                    self.homeView?.updateUserProfileImage(image: newImage)
+                }
             }
         }
+    }
+    
+    func showNativeAlertOnView(message: String, title: String) {
+        self.view?.showSimpleNativeAlert(with: message, title: title)
     }
 }
 

@@ -49,9 +49,8 @@ class HomePresenter: HomePresenterProtocol {
     func getUserProfileImage(withId: String) {
         interactor?.getUserProfileImage(withId: withId) { image in
             DispatchQueue.main.async {
-                if let img = image {
-                    self.view?.updateUserProfileImage(image: img)
-                }
+                let finalImage = image ?? UIImage(systemName: "person.fill")!
+                self.view?.updateUserProfileImage(image: finalImage)
             }
         }
     }

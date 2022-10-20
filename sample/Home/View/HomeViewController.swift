@@ -29,7 +29,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         addSwipeForSidemenuGesture()
         showActivityIndicator()
         
-        profileButton.backgroundColor = .black
+        profileButton.backgroundColor = .systemGray4
         profileButton.layer.cornerRadius = profileButton.frame.height / 2
         profileButton.layer.borderWidth = 1
         profileButton.layer.borderColor = UIColor.systemMint.cgColor

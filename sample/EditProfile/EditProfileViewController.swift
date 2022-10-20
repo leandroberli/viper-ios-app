@@ -31,6 +31,7 @@ class EditProfileViewController: UIViewController {
     }
     
     func updatePhotoProfile(_ image: UIImage?) {
+        self.userImage.tintColor = .systemGray2
         self.userImage.image = image
     }
     

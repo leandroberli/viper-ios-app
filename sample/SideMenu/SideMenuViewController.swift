@@ -21,6 +21,11 @@ class SideMenuViewController: UIViewController {
         setupUserImage()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        userImage.layoutSubviews()
+    }
+    
     private func setupUserImage() {
         userImage.layer.borderWidth = 1.5
         userImage.layer.borderColor = UIColor.systemMint.cgColor

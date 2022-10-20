@@ -23,7 +23,7 @@ final class StorageManagerTests: XCTestCase {
     }
     
     func testUploadUserProfilePhotoSuccess_ShouldReturnTrue() throws {
-        let imgData = UIImage(systemName: "person")?.pngData()!
+        let imgData = UIImage(systemName: "person.fill")?.pngData()!
         let userId = "41AyJV24zHRS3xeU0CDsUtQl01S2"
         let expectation = self.expectation(description: "Expect returns true.")
         

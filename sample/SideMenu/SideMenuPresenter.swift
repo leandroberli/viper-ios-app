@@ -34,18 +34,21 @@ class SideMenuPresenter: NSObject, SideMenuPresenterProtocol {
             return
         }
         StorageManager().getImageProfilePhotoUser(withId: user.uid) { image, error in
-            if let img = image {
-                DispatchQueue.main.async {
-                    self.view?.updateUserProfileImage(img)
-                }
+            let newImage = image ?? UIImage(systemName: "person.fill")!
+            DispatchQueue.main.async {
+                self.view?.updateUserProfileImage(newImage)
             }
         }
     }
     
     func didSelectEditProfile() {
-        //router?.initImagePickerViewController(delegate: self)
         //Pass home view for update user photo
         router?.showEditProfile(homeView: self.homeView)
+    }
+    
+    //Not using
+    func changeProfilePhoto() {
+        router?.initImagePickerViewController(delegate: self)
     }
     
     func didSelectLogOut() {
