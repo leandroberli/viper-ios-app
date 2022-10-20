@@ -19,11 +19,9 @@ class ApodHTTPClient: ApodHTTPClientProtocol {
     private let baseURL = "https://api.nasa.gov/planetary/apod"
     
     func getApods(completion: @escaping ([Post]?,Error?) -> Void) {
-        guard let url = URL(string: baseURL) else {
+        guard let request = getBasicURLRequest(with: baseURL) else {
             return
         }
-        
-        let request = getBasicURLRequest(with: url)
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let err = error {
@@ -44,12 +42,24 @@ class ApodHTTPClient: ApodHTTPClientProtocol {
         }.resume()
     }
     
-    private func getBasicURLRequest(with url: URL) -> URLRequest {
-        var request = URLRequest(url: url)
-        let queryItem = URLQueryItem(name: "api_key", value: apiKey)
-        let dateQueryItem = URLQueryItem(name: "start_date", value: "2022-10-10")
-        request.url?.append(queryItems: [queryItem, dateQueryItem])
-        return request
+    private func getBasicURLRequest(with urlString: String) -> URLRequest? {
+        var urlComps = URLComponents(string: urlString)
+        urlComps?.queryItems = [getAPIKeyQueryItem(), getStartDateQueryItem()]
+        
+        guard let url = urlComps?.url else {
+            print("Error getting URL Request")
+            return nil
+        }
+        
+        return URLRequest(url: url)
+    }
+    
+    private func getAPIKeyQueryItem() -> URLQueryItem {
+        return URLQueryItem(name: "api_key", value: apiKey)
+    }
+    
+    private func getStartDateQueryItem() -> URLQueryItem {
+        return URLQueryItem(name: "start_date", value: "2022-10-10")
     }
     
 }
