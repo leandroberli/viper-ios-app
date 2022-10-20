@@ -15,7 +15,7 @@ protocol SideMenuRouterProtocol {
 }
 
 class SideMenuRouter: NSObject, SideMenuRouterProtocol {
-    var entry: SideMenuViewController?
+    weak var entry: SideMenuViewController?
     
     init(entry: SideMenuViewController?) {
         self.entry = entry

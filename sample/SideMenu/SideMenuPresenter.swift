@@ -19,7 +19,7 @@ protocol SideMenuPresenterProtocol {
 
 class SideMenuPresenter: NSObject, SideMenuPresenterProtocol {
     
-    var view: SideMenuViewController?
+    weak var view: SideMenuViewController?
     var homeView: HomeViewController?
     var router: SideMenuRouter?
     
