@@ -32,6 +32,8 @@ class EditProfilePresenter: NSObject, EditProfilePresenterProtocol {
     var router: EditProfileRouterProtocol?
     var fromRegisterProcess = false
     
+    let imageCompressionQlty = 0.7
+    
     init(storageManager: StorageManager, view: EditProfileViewController, authManager: FirebaseAuthProtocol, router: EditProfileRouterProtocol?, databaseManager: DatabaseManager) {
         super.init()
         
@@ -111,7 +113,7 @@ extension EditProfilePresenter: UIImagePickerControllerDelegate, UINavigationCon
     
     //Upload to firebase storage.
     func startUploadProfileImageProcess(_ image: UIImage) {
-        guard let data = image.pngData(), let user = authManager?.getAuthentincathedUser() else {
+        guard let data = image.jpegData(compressionQuality: imageCompressionQlty), let user = authManager?.getAuthentincathedUser() else {
             return
         }
         storageManager?.uploadProfilePhotoForUser(withId: user.uid, data: data) { success, error in
