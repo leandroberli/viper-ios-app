@@ -14,6 +14,7 @@ protocol SideMenuPresenterProtocol {
     
     func didSelectEditProfile()
     func didSelectLogOut()
+    func didSelectOption(_ option: SideMenuOption)
     func didReceivedProfileImage(_ image: UIImage)
 }
 
@@ -39,6 +40,26 @@ class SideMenuPresenter: NSObject, SideMenuPresenterProtocol {
                 self.view?.updateUserProfileImage(newImage)
             }
         }
+    }
+    
+    func didSelectOption(_ option: SideMenuOption) {
+        switch option {
+        case .darkMode:
+            handleDarkMode()
+            return
+        case .hideName:
+            self.homeView?.topBarNameLabel.isHidden = !(self.homeView?.topBarNameLabel.isHidden ?? false)
+            return
+        case .other:
+            return
+        }
+    }
+    
+    private func handleDarkMode() {
+        let oldEnableValue = UserDefaults.standard.bool(forKey: "darkMode")
+        let newValue = !oldEnableValue
+        UserDefaults.standard.set(newValue, forKey: "darkMode")
+        UIApplication.shared.keyWindow?.overrideUserInterfaceStyle = newValue ? .dark : .light
     }
     
     func didSelectEditProfile() {

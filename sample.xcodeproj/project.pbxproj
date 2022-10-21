@@ -71,6 +71,7 @@
 		9AB7CB0928F0802200C2F47A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7CB0828F0802200C2F47A /* Buttons.swift */; };
 		9AB96BE52902E0EF00A3BB55 /* SideMenuSwitchOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AB96BE42902E0EF00A3BB55 /* SideMenuSwitchOptionView.xib */; };
 		9AB96BE72902E17000A3BB55 /* SideMenuSwitchOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB96BE62902E17000A3BB55 /* SideMenuSwitchOptionView.swift */; };
+		9AB96BE92903129500A3BB55 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB96BE82903129500A3BB55 /* UIView+Extension.swift */; };
 		9AD9C34528F5B0C500CEE4ED /* RegisterDataValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9C34428F5B0C500CEE4ED /* RegisterDataValidator.swift */; };
 		E01085AEA8ECCDD46425FF47 /* Pods_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9756AAE6E019706BCFC6AEC3 /* Pods_sample.framework */; };
 /* End PBXBuildFile section */
@@ -158,6 +159,7 @@
 		9AB7CB0828F0802200C2F47A /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		9AB96BE42902E0EF00A3BB55 /* SideMenuSwitchOptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuSwitchOptionView.xib; sourceTree = "<group>"; };
 		9AB96BE62902E17000A3BB55 /* SideMenuSwitchOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuSwitchOptionView.swift; sourceTree = "<group>"; };
+		9AB96BE82903129500A3BB55 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		9AD9C34428F5B0C500CEE4ED /* RegisterDataValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDataValidator.swift; sourceTree = "<group>"; };
 		A65FC8D132205B508771C378 /* Pods-sampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleTests.debug.xcconfig"; path = "Target Support Files/Pods-sampleTests/Pods-sampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A6E906298DCBFC7DFC28D698 /* Pods_sampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -466,6 +468,7 @@
 				9A7CBEC92900478300436F85 /* Utils.swift */,
 				9A86E8682900ACD300C7A5A9 /* KeyboardNotificationHandler.swift */,
 				9A9A88002901D71E0044B871 /* UIImage+Extension.swift */,
+				9AB96BE82903129500A3BB55 /* UIView+Extension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -689,6 +692,7 @@
 				9A749FC928F8603F00D06253 /* Textfields.swift in Sources */,
 				9A86E8692900ACD300C7A5A9 /* KeyboardNotificationHandler.swift in Sources */,
 				9A749F9D28F639DA00D06253 /* HomeViewController.swift in Sources */,
+				9AB96BE92903129500A3BB55 /* UIView+Extension.swift in Sources */,
 				9A749FC628F84FA500D06253 /* ApodDetailPresenter.swift in Sources */,
 				9A9C30EC28EE2D2200015B19 /* RegisterInteractor.swift in Sources */,
 				9A749FA028F6EEA800D06253 /* LoginPresenter.swift in Sources */,

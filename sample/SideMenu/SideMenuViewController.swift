@@ -21,10 +21,10 @@ class SideMenuViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         setupUserImage()
-        setupOptions()
+        setupSideMenuSwitchOptions()
     }
     
-    private func setupOptions() {
+    private func setupSideMenuSwitchOptions() {
         if let stackView = self.view.subviews.first(where: { type(of: $0) == UIStackView.self }) as? UIStackView {
             self.configurableOptionsArray.forEach({
                 if let view = SideMenuSwitchOptionView.instantiateFromNib() {
@@ -43,11 +43,6 @@ class SideMenuViewController: UIViewController {
                 }
             })
         }
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        userImage.layoutSubviews()
     }
     
     private func setupUserImage() {
@@ -70,27 +65,13 @@ class SideMenuViewController: UIViewController {
     @IBAction func logoutAction(_ sender: Any) {
         presenter?.didSelectLogOut()
     }
-    
-    private func handleDarkMode() {
-        let enabled = UserDefaults.standard.bool(forKey: "darkMode")
-        UserDefaults.standard.set(!enabled, forKey: "darkMode")
-        if let view = self.optionsViews?.first(where: { $0.option == .darkMode }) as? SideMenuSwitchOptionView {
-            UIApplication.shared.keyWindow?.overrideUserInterfaceStyle = view.switchControl.isOn ? .dark : .light
-        }
-    }
 }
 
 extension SideMenuViewController: SideMenuSwitchOptionProtocol {
-    //Implements new options in SideMenuSwitchOptionView enum and handle interaction in this func.
+
     func didSelectOption(type: SideMenuOption) {
-        switch type {
-        case .darkMode:
-            handleDarkMode()
-        case .hideName:
-            //Handle hide name
-            return
-        case .other:
-            return
-        }
+        //Implements new options in SideMenuOption enum and handle interaction in this func.
+        presenter?.didSelectOption(type)
     }
+    
 }

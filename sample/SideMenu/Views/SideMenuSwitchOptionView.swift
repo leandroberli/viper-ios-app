@@ -49,14 +49,3 @@ class SideMenuSwitchOptionView: UIView {
         delegate?.didSelectOption(type: self.option)
     }
 }
-
-extension UIView {
-    // MARK: - Custom Functions
-    static func instantiateFromNib() -> Self? {
-        func instanceFromNib<T: UIView>() -> T? {
-            return UINib(nibName: String(describing: self), bundle: nil).instantiate(withOwner: nil, options: nil).first as? T
-        }
-        
-        return instanceFromNib()
-    }
-}
