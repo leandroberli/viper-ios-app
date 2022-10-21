@@ -69,6 +69,8 @@
 		9AB7CB0428F05AC200C2F47A /* RegisterInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7CB0328F05AC200C2F47A /* RegisterInteractorProtocol.swift */; };
 		9AB7CB0628F05AEE00C2F47A /* RegisterViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7CB0528F05AEE00C2F47A /* RegisterViewProtocol.swift */; };
 		9AB7CB0928F0802200C2F47A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7CB0828F0802200C2F47A /* Buttons.swift */; };
+		9AB96BE52902E0EF00A3BB55 /* SideMenuSwitchOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AB96BE42902E0EF00A3BB55 /* SideMenuSwitchOptionView.xib */; };
+		9AB96BE72902E17000A3BB55 /* SideMenuSwitchOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB96BE62902E17000A3BB55 /* SideMenuSwitchOptionView.swift */; };
 		9AD9C34528F5B0C500CEE4ED /* RegisterDataValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9C34428F5B0C500CEE4ED /* RegisterDataValidator.swift */; };
 		E01085AEA8ECCDD46425FF47 /* Pods_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9756AAE6E019706BCFC6AEC3 /* Pods_sample.framework */; };
 /* End PBXBuildFile section */
@@ -154,6 +156,8 @@
 		9AB7CB0328F05AC200C2F47A /* RegisterInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractorProtocol.swift; sourceTree = "<group>"; };
 		9AB7CB0528F05AEE00C2F47A /* RegisterViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewProtocol.swift; sourceTree = "<group>"; };
 		9AB7CB0828F0802200C2F47A /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		9AB96BE42902E0EF00A3BB55 /* SideMenuSwitchOptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuSwitchOptionView.xib; sourceTree = "<group>"; };
+		9AB96BE62902E17000A3BB55 /* SideMenuSwitchOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuSwitchOptionView.swift; sourceTree = "<group>"; };
 		9AD9C34428F5B0C500CEE4ED /* RegisterDataValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDataValidator.swift; sourceTree = "<group>"; };
 		A65FC8D132205B508771C378 /* Pods-sampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleTests.debug.xcconfig"; path = "Target Support Files/Pods-sampleTests/Pods-sampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A6E906298DCBFC7DFC28D698 /* Pods_sampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -285,6 +289,7 @@
 		9A749FB728F74D1200D06253 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				9AB96BE12902E08F00A3BB55 /* Views */,
 				9A749FB828F74D2700D06253 /* SideMenuViewController.swift */,
 				9A749FB928F74D2700D06253 /* SideMenuViewController.xib */,
 				9A749FBD28F8441300D06253 /* SideMenuPresenter.swift */,
@@ -465,6 +470,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		9AB96BE12902E08F00A3BB55 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9AB96BE42902E0EF00A3BB55 /* SideMenuSwitchOptionView.xib */,
+				9AB96BE62902E17000A3BB55 /* SideMenuSwitchOptionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C4471A55873DCF281DA54699 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -573,6 +587,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A9C30B728EE081B00015B19 /* LaunchScreen.storyboard in Resources */,
+				9AB96BE52902E0EF00A3BB55 /* SideMenuSwitchOptionView.xib in Resources */,
 				9A749F9428F5FF7900D06253 /* SplashViewController.xib in Resources */,
 				9A9C30B428EE081B00015B19 /* Assets.xcassets in Resources */,
 				9A749FB528F7410B00D06253 /* HomePostTableViewCell.xib in Resources */,
@@ -691,6 +706,7 @@
 				9A69002C28FDD4C200F591F8 /* EditProfileRouter.swift in Sources */,
 				9AA14FA828EE4BDC006A3BDF /* FirebaseAuthManager.swift in Sources */,
 				9A749FAE28F7352400D06253 /* ApodHTTPClient.swift in Sources */,
+				9AB96BE72902E17000A3BB55 /* SideMenuSwitchOptionView.swift in Sources */,
 				9A749FA828F7331900D06253 /* HomePresenter.swift in Sources */,
 				9A749FC328F84DF600D06253 /* ApodDetailViewController.swift in Sources */,
 				9A749F9628F6003F00D06253 /* SplashRouter.swift in Sources */,

@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SideMenuViewController" customModule="sample" customModuleProvider="target">
             <connections>
-                <outlet property="darkModeSwitch" destination="v8v-Sh-fsE" id="Eye-id-azi"/>
                 <outlet property="editProfileButton" destination="mdb-Y3-ohi" id="JpP-a6-xMl"/>
                 <outlet property="logoutButton" destination="Oyc-I7-UOW" id="svS-L2-xzP"/>
                 <outlet property="userImage" destination="Xaw-Bv-cDm" id="MRx-Rx-20o"/>
@@ -56,54 +55,8 @@
                         <action selector="logoutAction:" destination="-1" eventType="touchUpInside" id="YUa-b9-oOR"/>
                     </connections>
                 </button>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ygC-kx-nwB">
-                    <rect key="frame" x="0.0" y="227" width="390" height="44"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUO-74-SAH">
-                            <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adS-9D-LrM">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="1"/>
-                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="1" id="tat-Kz-JXb"/>
-                                    </constraints>
-                                </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoV-d4-gof">
-                                    <rect key="frame" x="15" y="11.999999999999998" width="85.333333333333329" height="20.333333333333329"/>
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v8v-Sh-fsE">
-                                    <rect key="frame" x="326" y="6.6666666666666572" width="51" height="31"/>
-                                </switch>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K22-Fl-pIh">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain"/>
-                                    <connections>
-                                        <action selector="darkModeAction:" destination="-1" eventType="touchUpInside" id="R2u-bU-ObD"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <constraints>
-                                <constraint firstItem="adS-9D-LrM" firstAttribute="leading" secondItem="kUO-74-SAH" secondAttribute="leading" id="0c4-07-JxH"/>
-                                <constraint firstItem="adS-9D-LrM" firstAttribute="top" secondItem="kUO-74-SAH" secondAttribute="top" id="8GP-ZX-hvW"/>
-                                <constraint firstAttribute="trailing" secondItem="adS-9D-LrM" secondAttribute="trailing" id="DZ3-hx-viY"/>
-                                <constraint firstItem="K22-Fl-pIh" firstAttribute="leading" secondItem="kUO-74-SAH" secondAttribute="leading" id="Gab-a8-FC2"/>
-                                <constraint firstAttribute="trailing" secondItem="v8v-Sh-fsE" secondAttribute="trailing" constant="15" id="KM8-nZ-Jsv"/>
-                                <constraint firstItem="FoV-d4-gof" firstAttribute="centerY" secondItem="kUO-74-SAH" secondAttribute="centerY" id="Vir-2O-prX"/>
-                                <constraint firstAttribute="height" constant="44" id="aov-E4-Pfj"/>
-                                <constraint firstItem="v8v-Sh-fsE" firstAttribute="centerY" secondItem="FoV-d4-gof" secondAttribute="centerY" id="ef2-dm-DdV"/>
-                                <constraint firstItem="K22-Fl-pIh" firstAttribute="top" secondItem="kUO-74-SAH" secondAttribute="top" id="jum-oa-imN"/>
-                                <constraint firstAttribute="bottom" secondItem="K22-Fl-pIh" secondAttribute="bottom" id="sdM-Ak-kss"/>
-                                <constraint firstItem="FoV-d4-gof" firstAttribute="leading" secondItem="kUO-74-SAH" secondAttribute="leading" constant="15" id="tfX-NG-eVT"/>
-                                <constraint firstAttribute="trailing" secondItem="K22-Fl-pIh" secondAttribute="trailing" id="zda-xl-jcg"/>
-                            </constraints>
-                        </view>
-                    </subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ygC-kx-nwB">
+                    <rect key="frame" x="0.0" y="180" width="390" height="44"/>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -131,9 +84,6 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
