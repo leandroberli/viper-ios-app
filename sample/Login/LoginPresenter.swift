@@ -47,7 +47,7 @@ class LoginPresenter: LoginPresenterProtocol {
     func didAuthenticateRequestFailed(error: String) {
         print(error)
         self.view?.didReceivedAuthError()
-        self.router?.entry?.showSimpleNativeAlert(with: error, title: "Login error")
+        self.router?.showSimpleNativeAlert(with: error, title: "Login error")
     }
     
     func didAuthenticateRequestSuccess() {

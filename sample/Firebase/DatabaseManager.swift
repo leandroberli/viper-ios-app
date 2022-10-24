@@ -10,7 +10,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 protocol DatabaseManagerProtocol {
-    func saveUser(withId: String, data: CustomUser)
+    func saveUser(withId: String, data: CustomUser, completion: @escaping (Bool) -> Void)
     func getUser(withId: String, completion: @escaping (CustomUser?,Error?) -> Void)
 }
 
@@ -21,16 +21,19 @@ class DatabaseManager: DatabaseManagerProtocol {
     }
     
     //Create or update user
-    func saveUser(withId: String, data: CustomUser) {
+    func saveUser(withId: String, data: CustomUser, completion: @escaping (Bool) -> Void) {
         let db = Firestore.firestore()
         do {
             try db.collection(DatabasePaths.users.rawValue).document(withId).setData(from: data) { error in
                 if let err = error {
                     print(err.localizedDescription)
+                    completion(false)
                 }
+                completion(true)
             }
         } catch {
             print(error.localizedDescription)
+            completion(false)
             return
         }
         

@@ -13,5 +13,5 @@ protocol RegisterInteractorProtocol {
     var firebaseAuth: FirebaseAuthProtocol? { get set }
 
     func registerNewUser(withEmail: String, password: String)
-    func saveUserInDatabase(user: FirebaseAuth.User?)
+    func saveUserInDatabase(user: CustomUser?)
 }

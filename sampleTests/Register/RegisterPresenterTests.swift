@@ -6,37 +6,8 @@
 //
 
 import XCTest
+import FirebaseAuth
 @testable import sample
-
-class MockViewRegister: RegisterViewProtocol {
-    var presenter: sample.RegisterPresenterProtocol?
-    var registerSuccessCalled = false
-    var registerFailedCalled = false
-    var expectation: XCTestExpectation?
-    
-    func registerSuccess() {
-        registerSuccessCalled = true
-        self.expectation?.fulfill()
-    }
-    
-    func registerFailed(messagge: String) {
-        registerFailedCalled = true
-        self.expectation?.fulfill()
-    }
-}
-
-class MockRegisterInteractor: RegisterInteractorProtocol {
-    var presenter: sample.RegisterPresenterProtocol?
-    
-    var firebaseAuth: sample.FirebaseAuthProtocol?
-    var registerNewUserCalled = false
-    var expectation: XCTestExpectation?
-    
-    func registerNewUser(withEmail: String, password: String) {
-        registerNewUserCalled = true
-        self.expectation?.fulfill()
-    }
-}
 
 final class RegisterPresenterTests: XCTestCase {
     

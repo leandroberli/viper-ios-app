@@ -10,6 +10,7 @@ import XCTest
 
 final class StorageManagerTests: XCTestCase {
     
+    let existingID = "41AyJV24zHRS3xeU0CDsUtQl01S2"
     var sut: StorageManager!
 
     override func setUpWithError() throws {
@@ -24,7 +25,7 @@ final class StorageManagerTests: XCTestCase {
     
     func testUploadUserProfilePhotoSuccess_ShouldReturnTrue() throws {
         let imgData = UIImage(systemName: "person.fill")?.pngData()!
-        let userId = "41AyJV24zHRS3xeU0CDsUtQl01S2"
+        let userId = existingID
         let expectation = self.expectation(description: "Expect returns true.")
         
         sut.uploadProfilePhotoForUser(withId: userId, data: imgData!) { success, error in
@@ -35,42 +36,12 @@ final class StorageManagerTests: XCTestCase {
         self.wait(for: [expectation], timeout: 5)
     }
     
-    //TODO: Try simulate error request
-    /*func testUploadUserProfilePhotoFailed_ShouldReturnFalse() throws {
-        let data = "dummy".data(using: .utf8)
-        let userId = "41AyJV24zHRS3xeU0CDsUtQl01S2"
-        let expectation = self.expectation(description: "Expect returns false.")
-        
-        sut.uploadProfilePhotoForUser(withId: userId, data: data!) { success, error in
-            XCTAssertNotNil(error)
-            expectation.fulfill()
-        }
-        
-        self.wait(for: [expectation], timeout: 5)
-    }*/
-    
-    func testGetUserProfileURLSuccess_ShouldReturnURL() throws {
-        let userId = "41AyJV24zHRS3xeU0CDsUtQl01S2"
-        let exp = self.expectation(description: "Expect return an URL Object.")
-        
-        sut.getURLProfilePhotoForUser(withId: userId) { url, error in
-            XCTAssertNotNil(url)
+    func testGetUploadedUserProfilePhotoSuccess() throws {
+        let exp = self.expectation(description: "Image data.")
+        sut.getImageProfilePhotoUser(withId: existingID) { image, error in
             exp.fulfill()
+            XCTAssertNotNil(image)
         }
-        
-        self.wait(for: [exp], timeout: 5)
-    }
-
-    func testGetUserProfileURLFailed_ShouldReturnError() throws {
-        //This ID doesn't exist
-        let userId = "41AyJV24zHRSDsUtQl0S2"
-        let exp = self.expectation(description: "Expect return an Error.")
-        
-        sut.getURLProfilePhotoForUser(withId: userId) { url, error in
-            XCTAssertNotNil(error)
-            exp.fulfill()
-        }
-        
         self.wait(for: [exp], timeout: 5)
     }
 }

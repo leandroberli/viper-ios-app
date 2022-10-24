@@ -29,9 +29,9 @@ enum FirebaseAuthError: String, Equatable, Error, LocalizedError {
 }
 
 protocol FirebaseAuthProtocol {
-    func createUser(withEmail: String, password: String, completion: @escaping (User?, Error?) -> Void)
-    func getAuthentincathedUser() -> User?
-    func authenticateUser(withEmail: String, password: String, completion: @escaping (User?,Error?) -> Void)
+    func createUser(withEmail: String, password: String, completion: @escaping (CustomUser?, Error?) -> Void)
+    func getAuthentincathedUser() -> CustomUser?
+    func authenticateUser(withEmail: String, password: String, completion: @escaping (CustomUser?,Error?) -> Void)
     func logoutUser()
 }
 
@@ -47,33 +47,42 @@ class FirebaseAuthManager: FirebaseAuthProtocol {
     }
     
     //Login request
-    func authenticateUser(withEmail: String, password: String, completion: @escaping (User?, Error?) -> Void) {
+    func authenticateUser(withEmail: String, password: String, completion: @escaping (CustomUser?, Error?) -> Void) {
         Auth.auth().signIn(withEmail: withEmail, password: password) { authData, error in
             if let err = error {
                 let error = self.processError(err)
                 completion(nil,error)
                 return
             }
-            completion(authData?.user, nil)
+            let user = self.getCustomUserFrom(firebaseUser: authData?.user)
+            completion(user, nil)
         }
     }
     
     //Get current user
-    func getAuthentincathedUser() -> User? {
+    func getAuthentincathedUser() -> CustomUser? {
         if let user = Auth.auth().currentUser {
-          return user
+          return getCustomUserFrom(firebaseUser: user)
         } else {
           return nil
         }
     }
     
-    func createUser(withEmail: String, password: String, completion: @escaping (User?, Error?) -> Void) {
+    func getCustomUserFrom(firebaseUser: User?) -> CustomUser? {
+        guard let id = firebaseUser?.uid, let email = firebaseUser?.email else {
+            return nil
+        }
+        return CustomUser(uid: id, email: email)
+    }
+    
+    func createUser(withEmail: String, password: String, completion: @escaping (CustomUser?, Error?) -> Void) {
         Auth.auth().createUser(withEmail: withEmail, password: password) { authResult, error in
             if let err = error {
                 completion(nil,err)
                 return
             }
-            completion(authResult?.user, nil)
+            let user = self.getCustomUserFrom(firebaseUser: authResult?.user)
+            completion(user, nil)
         }
     }
     

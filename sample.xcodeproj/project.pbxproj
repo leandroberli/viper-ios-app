@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		3BF5A448C2D320F0E5564BF8 /* Pods_sampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E906298DCBFC7DFC28D698 /* Pods_sampleTests.framework */; };
+		9A548FBD29070862001D8A2C /* MockRegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A548FBC29070862001D8A2C /* MockRegisterInteractor.swift */; };
+		9A548FBF290708FD001D8A2C /* MockViewRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A548FBE290708FD001D8A2C /* MockViewRegister.swift */; };
+		9A548FC129070971001D8A2C /* MockStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A548FC029070971001D8A2C /* MockStorageManager.swift */; };
+		9A548FC5290709DE001D8A2C /* MockEditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A548FC4290709DE001D8A2C /* MockEditProfileView.swift */; };
+		9A548FC729070A1A001D8A2C /* MockRouterEditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A548FC629070A1A001D8A2C /* MockRouterEditProfile.swift */; };
+		9A548FCA29070ADC001D8A2C /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A548FC929070ADC001D8A2C /* LoginPresenterTests.swift */; };
+		9A548FCD29070B22001D8A2C /* MockLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A548FCC29070B22001D8A2C /* MockLoginInteractor.swift */; };
+		9A548FCF29070BE7001D8A2C /* MockLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A548FCE29070BE6001D8A2C /* MockLoginView.swift */; };
+		9A548FD129070C1B001D8A2C /* MockLoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A548FD029070C1B001D8A2C /* MockLoginRouter.swift */; };
 		9A69002328FDC4BA00F591F8 /* StorageManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69002228FDC4BA00F591F8 /* StorageManagerTests.swift */; };
 		9A69002728FDCE3500F591F8 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69002528FDCE3500F591F8 /* EditProfileViewController.swift */; };
 		9A69002828FDCE3500F591F8 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A69002628FDCE3500F591F8 /* EditProfileViewController.xib */; };
@@ -72,6 +81,8 @@
 		9AB96BE52902E0EF00A3BB55 /* SideMenuSwitchOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AB96BE42902E0EF00A3BB55 /* SideMenuSwitchOptionView.xib */; };
 		9AB96BE72902E17000A3BB55 /* SideMenuSwitchOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB96BE62902E17000A3BB55 /* SideMenuSwitchOptionView.swift */; };
 		9AB96BE92903129500A3BB55 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB96BE82903129500A3BB55 /* UIView+Extension.swift */; };
+		9AB96BEB29031D1800A3BB55 /* MockDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB96BEA29031D1800A3BB55 /* MockDatabaseManager.swift */; };
+		9AB96BEE290341B500A3BB55 /* EditProfilePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB96BED290341B500A3BB55 /* EditProfilePresenterTests.swift */; };
 		9AD9C34528F5B0C500CEE4ED /* RegisterDataValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9C34428F5B0C500CEE4ED /* RegisterDataValidator.swift */; };
 		E01085AEA8ECCDD46425FF47 /* Pods_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9756AAE6E019706BCFC6AEC3 /* Pods_sample.framework */; };
 /* End PBXBuildFile section */
@@ -91,6 +102,15 @@
 		481E0AF7403A9048177212E3 /* Pods-sample-sampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sample-sampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-sample-sampleUITests/Pods-sample-sampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		58D1C89E283BF3C406450614 /* Pods_sample_sampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sample_sampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9756AAE6E019706BCFC6AEC3 /* Pods_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A548FBC29070862001D8A2C /* MockRegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRegisterInteractor.swift; sourceTree = "<group>"; };
+		9A548FBE290708FD001D8A2C /* MockViewRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewRegister.swift; sourceTree = "<group>"; };
+		9A548FC029070971001D8A2C /* MockStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStorageManager.swift; sourceTree = "<group>"; };
+		9A548FC4290709DE001D8A2C /* MockEditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEditProfileView.swift; sourceTree = "<group>"; };
+		9A548FC629070A1A001D8A2C /* MockRouterEditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRouterEditProfile.swift; sourceTree = "<group>"; };
+		9A548FC929070ADC001D8A2C /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
+		9A548FCC29070B22001D8A2C /* MockLoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginInteractor.swift; sourceTree = "<group>"; };
+		9A548FCE29070BE6001D8A2C /* MockLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginView.swift; sourceTree = "<group>"; };
+		9A548FD029070C1B001D8A2C /* MockLoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginRouter.swift; sourceTree = "<group>"; };
 		9A69002228FDC4BA00F591F8 /* StorageManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManagerTests.swift; sourceTree = "<group>"; };
 		9A69002528FDCE3500F591F8 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		9A69002628FDCE3500F591F8 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
@@ -160,6 +180,8 @@
 		9AB96BE42902E0EF00A3BB55 /* SideMenuSwitchOptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuSwitchOptionView.xib; sourceTree = "<group>"; };
 		9AB96BE62902E17000A3BB55 /* SideMenuSwitchOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuSwitchOptionView.swift; sourceTree = "<group>"; };
 		9AB96BE82903129500A3BB55 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		9AB96BEA29031D1800A3BB55 /* MockDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDatabaseManager.swift; sourceTree = "<group>"; };
+		9AB96BED290341B500A3BB55 /* EditProfilePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenterTests.swift; sourceTree = "<group>"; };
 		9AD9C34428F5B0C500CEE4ED /* RegisterDataValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDataValidator.swift; sourceTree = "<group>"; };
 		A65FC8D132205B508771C378 /* Pods-sampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleTests.debug.xcconfig"; path = "Target Support Files/Pods-sampleTests/Pods-sampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A6E906298DCBFC7DFC28D698 /* Pods_sampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +210,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A548FC2290709B2001D8A2C /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				9AA14FB028EEF99B006A3BDF /* MockFirebaseAuthManager.swift */,
+				9AB96BEA29031D1800A3BB55 /* MockDatabaseManager.swift */,
+				9A548FC029070971001D8A2C /* MockStorageManager.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		9A548FC3290709D2001D8A2C /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				9A548FC4290709DE001D8A2C /* MockEditProfileView.swift */,
+				9A548FC629070A1A001D8A2C /* MockRouterEditProfile.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		9A548FC829070A4D001D8A2C /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				9AA14FB228EEF9D3006A3BDF /* MockRegisterPresenter.swift */,
+				9A548FBC29070862001D8A2C /* MockRegisterInteractor.swift */,
+				9A548FBE290708FD001D8A2C /* MockViewRegister.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		9A548FCB29070B0A001D8A2C /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				9A548FCC29070B22001D8A2C /* MockLoginInteractor.swift */,
+				9A548FCE29070BE6001D8A2C /* MockLoginView.swift */,
+				9A548FD029070C1B001D8A2C /* MockLoginRouter.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		9A69002428FDCE1F00F591F8 /* EditProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +315,8 @@
 		9A749F8A28F5FE4500D06253 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				9A548FCB29070B0A001D8A2C /* Mock */,
+				9A548FC929070ADC001D8A2C /* LoginPresenterTests.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -374,6 +437,7 @@
 		9A9C30C028EE081B00015B19 /* sampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				9AB96BEC2903418D00A3BB55 /* EditProfile */,
 				9A749F8A28F5FE4500D06253 /* Login */,
 				9A749F8228F5F90000D06253 /* Home */,
 				9AA14FA928EE56B1006A3BDF /* Firebase */,
@@ -406,9 +470,9 @@
 		9A9C30E628EE2CE800015B19 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				9A548FC829070A4D001D8A2C /* Mock */,
 				9AA14FAC28EE61BD006A3BDF /* RegisterPresenterTests.swift */,
 				9AA14FAE28EE64E6006A3BDF /* RegisterInteractorTests.swift */,
-				9AA14FB228EEF9D3006A3BDF /* MockRegisterPresenter.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -426,7 +490,7 @@
 		9AA14FA928EE56B1006A3BDF /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				9AA14FB028EEF99B006A3BDF /* MockFirebaseAuthManager.swift */,
+				9A548FC2290709B2001D8A2C /* Mock */,
 				9AA14FAA28EE56D4006A3BDF /* FirebaseAuthManagerTests.swift */,
 				9A69002228FDC4BA00F591F8 /* StorageManagerTests.swift */,
 				9A69003128FEF7B900F591F8 /* DatabaseManagerTests.swift */,
@@ -480,6 +544,15 @@
 				9AB96BE62902E17000A3BB55 /* SideMenuSwitchOptionView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9AB96BEC2903418D00A3BB55 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				9A548FC3290709D2001D8A2C /* Mock */,
+				9AB96BED290341B500A3BB55 /* EditProfilePresenterTests.swift */,
+			);
+			path = EditProfile;
 			sourceTree = "<group>";
 		};
 		C4471A55873DCF281DA54699 /* Frameworks */ = {
@@ -735,12 +808,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A548FC729070A1A001D8A2C /* MockRouterEditProfile.swift in Sources */,
 				9AA14FB128EEF99B006A3BDF /* MockFirebaseAuthManager.swift in Sources */,
+				9A548FCD29070B22001D8A2C /* MockLoginInteractor.swift in Sources */,
+				9A548FC129070971001D8A2C /* MockStorageManager.swift in Sources */,
 				9AA14FAB28EE56D4006A3BDF /* FirebaseAuthManagerTests.swift in Sources */,
+				9A548FCA29070ADC001D8A2C /* LoginPresenterTests.swift in Sources */,
 				9AA14FAD28EE61BD006A3BDF /* RegisterPresenterTests.swift in Sources */,
+				9AB96BEE290341B500A3BB55 /* EditProfilePresenterTests.swift in Sources */,
 				9A69002328FDC4BA00F591F8 /* StorageManagerTests.swift in Sources */,
+				9A548FC5290709DE001D8A2C /* MockEditProfileView.swift in Sources */,
+				9A548FCF29070BE7001D8A2C /* MockLoginView.swift in Sources */,
 				9A69003228FEF7B900F591F8 /* DatabaseManagerTests.swift in Sources */,
+				9A548FBF290708FD001D8A2C /* MockViewRegister.swift in Sources */,
 				9AA14FB328EEF9D3006A3BDF /* MockRegisterPresenter.swift in Sources */,
+				9A548FD129070C1B001D8A2C /* MockLoginRouter.swift in Sources */,
+				9A548FBD29070862001D8A2C /* MockRegisterInteractor.swift in Sources */,
+				9AB96BEB29031D1800A3BB55 /* MockDatabaseManager.swift in Sources */,
 				9AA14FAF28EE64E6006A3BDF /* RegisterInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

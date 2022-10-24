@@ -14,10 +14,12 @@ final class RegisterInteractorTests: XCTestCase {
     var sut: RegisterInteractor!
     var presenter: MockRegisterPresenter!
     var fbManager: MockFirebaseAuthManager!
+    var dbManager: MockDatabaseManager!
 
     override func setUpWithError() throws {
         fbManager = MockFirebaseAuthManager()
-        sut = RegisterInteractor(authManager: fbManager)
+        dbManager = MockDatabaseManager()
+        sut = RegisterInteractor(authManager: fbManager, dbManager: dbManager)
         presenter = MockRegisterPresenter()
         sut.presenter = presenter
     }
@@ -26,6 +28,7 @@ final class RegisterInteractorTests: XCTestCase {
         sut = nil
         presenter = nil
         fbManager = nil
+        dbManager = nil
     }
     
     func testRegisterWithError_ShouldThrowPresenterError() throws {
@@ -38,15 +41,19 @@ final class RegisterInteractorTests: XCTestCase {
         self.wait(for: [myExpectation], timeout: 5)
         
         XCTAssertTrue(presenter.didFinishRegisterRequestWithError)
+        
     }
     
-    func testRegisterSuccessFlow_ShouldThrowPresenterSuccess() throws {
-        let myExpectation = self.expectation(description: "Expect success handle in presenter")
-        presenter.expectation = myExpectation
-        sut.registerNewUser(withEmail: "leandroberli@gmail.com", password: "lalala")
+    func testRegisterSucess_ShouldSaveInDatabase() throws {
+        let myExpectation = self.expectation(description: "Expect new user registred saved in database")
+        dbManager.expectation = myExpectation
+        
+        sut.registerNewUser(withEmail: "123@gmail.com", password: "lalala")
+        
         self.wait(for: [myExpectation], timeout: 5)
         
-        XCTAssertFalse(presenter.didFinishRegisterRequestWithError)
+        XCTAssertTrue(dbManager.saveUserCalled)
     }
+    
 
 }

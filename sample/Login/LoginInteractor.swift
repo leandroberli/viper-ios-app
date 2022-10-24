@@ -12,7 +12,7 @@ protocol LoginInteractorProtocol {
     var presenter: LoginPresenterProtocol? { get set }
     var authManager: FirebaseAuthProtocol? { get set }
     
-    func authenticateUser(withEmail: String, password: String, completion: @escaping (User?,Error?) -> Void)
+    func authenticateUser(withEmail: String, password: String, completion: @escaping (CustomUser?,Error?) -> Void)
 }
 
 class LoginInteractor: LoginInteractorProtocol {
@@ -23,7 +23,7 @@ class LoginInteractor: LoginInteractorProtocol {
         self.authManager = authManager
     }
     
-    func authenticateUser(withEmail: String, password: String, completion: @escaping (User?, Error?) -> Void) {
+    func authenticateUser(withEmail: String, password: String, completion: @escaping (CustomUser?, Error?) -> Void) {
         print(#function)
         self.authManager?.authenticateUser(withEmail: withEmail, password: password) { user, error in
             if let err = error {

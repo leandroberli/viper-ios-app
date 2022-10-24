@@ -13,21 +13,23 @@ protocol LoginRouterProtocol {
     
     func showRegisterFormScreen()
     func showHomeScreen()
+    func showSimpleNativeAlert(with messagge: String, title: String?)
 }
 
 class LoginRouter: LoginRouterProtocol {
+    
     var entry: EmailLoginViewController?
     
-    func showRegisterFormScreen() {
-        let router = RegisterRouter()
-        entry?.navigationController?.pushViewController(router.entry as! RegisterViewController, animated: true)
-    }
-    
-    func showSimpleNativeAlert(with messagge: String?, title: String?) {
+    func showSimpleNativeAlert(with messagge: String, title: String?) {
         let alert = UIAlertController(title: title, message: messagge, preferredStyle: .alert)
         let action = UIAlertAction(title: "Okay", style: .cancel)
         alert.addAction(action)
         self.entry?.present(alert, animated: true)
+    }
+    
+    func showRegisterFormScreen() {
+        let router = RegisterRouter()
+        entry?.navigationController?.pushViewController(router.entry as! RegisterViewController, animated: true)
     }
     
     func showHomeScreen() {
