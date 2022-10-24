@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import FirebaseAuth
 @testable import sample
 
 class MockViewRegister: RegisterViewProtocol {
@@ -26,6 +27,10 @@ class MockViewRegister: RegisterViewProtocol {
 }
 
 class MockRegisterInteractor: RegisterInteractorProtocol {
+    func saveUserInDatabase(user: CustomUser?) {
+        return
+    }
+    
     var presenter: sample.RegisterPresenterProtocol?
     
     var firebaseAuth: sample.FirebaseAuthProtocol?

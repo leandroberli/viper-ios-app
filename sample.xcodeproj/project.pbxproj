@@ -72,6 +72,8 @@
 		9AB96BE52902E0EF00A3BB55 /* SideMenuSwitchOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AB96BE42902E0EF00A3BB55 /* SideMenuSwitchOptionView.xib */; };
 		9AB96BE72902E17000A3BB55 /* SideMenuSwitchOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB96BE62902E17000A3BB55 /* SideMenuSwitchOptionView.swift */; };
 		9AB96BE92903129500A3BB55 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB96BE82903129500A3BB55 /* UIView+Extension.swift */; };
+		9AB96BEB29031D1800A3BB55 /* MockDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB96BEA29031D1800A3BB55 /* MockDatabaseManager.swift */; };
+		9AB96BEE290341B500A3BB55 /* EditProfilePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB96BED290341B500A3BB55 /* EditProfilePresenterTests.swift */; };
 		9AD9C34528F5B0C500CEE4ED /* RegisterDataValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9C34428F5B0C500CEE4ED /* RegisterDataValidator.swift */; };
 		E01085AEA8ECCDD46425FF47 /* Pods_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9756AAE6E019706BCFC6AEC3 /* Pods_sample.framework */; };
 /* End PBXBuildFile section */
@@ -160,6 +162,8 @@
 		9AB96BE42902E0EF00A3BB55 /* SideMenuSwitchOptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuSwitchOptionView.xib; sourceTree = "<group>"; };
 		9AB96BE62902E17000A3BB55 /* SideMenuSwitchOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuSwitchOptionView.swift; sourceTree = "<group>"; };
 		9AB96BE82903129500A3BB55 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		9AB96BEA29031D1800A3BB55 /* MockDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDatabaseManager.swift; sourceTree = "<group>"; };
+		9AB96BED290341B500A3BB55 /* EditProfilePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenterTests.swift; sourceTree = "<group>"; };
 		9AD9C34428F5B0C500CEE4ED /* RegisterDataValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDataValidator.swift; sourceTree = "<group>"; };
 		A65FC8D132205B508771C378 /* Pods-sampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleTests.debug.xcconfig"; path = "Target Support Files/Pods-sampleTests/Pods-sampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A6E906298DCBFC7DFC28D698 /* Pods_sampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -374,6 +378,7 @@
 		9A9C30C028EE081B00015B19 /* sampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				9AB96BEC2903418D00A3BB55 /* EditProfile */,
 				9A749F8A28F5FE4500D06253 /* Login */,
 				9A749F8228F5F90000D06253 /* Home */,
 				9AA14FA928EE56B1006A3BDF /* Firebase */,
@@ -430,6 +435,7 @@
 				9AA14FAA28EE56D4006A3BDF /* FirebaseAuthManagerTests.swift */,
 				9A69002228FDC4BA00F591F8 /* StorageManagerTests.swift */,
 				9A69003128FEF7B900F591F8 /* DatabaseManagerTests.swift */,
+				9AB96BEA29031D1800A3BB55 /* MockDatabaseManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -480,6 +486,14 @@
 				9AB96BE62902E17000A3BB55 /* SideMenuSwitchOptionView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9AB96BEC2903418D00A3BB55 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				9AB96BED290341B500A3BB55 /* EditProfilePresenterTests.swift */,
+			);
+			path = EditProfile;
 			sourceTree = "<group>";
 		};
 		C4471A55873DCF281DA54699 /* Frameworks */ = {
@@ -738,9 +752,11 @@
 				9AA14FB128EEF99B006A3BDF /* MockFirebaseAuthManager.swift in Sources */,
 				9AA14FAB28EE56D4006A3BDF /* FirebaseAuthManagerTests.swift in Sources */,
 				9AA14FAD28EE61BD006A3BDF /* RegisterPresenterTests.swift in Sources */,
+				9AB96BEE290341B500A3BB55 /* EditProfilePresenterTests.swift in Sources */,
 				9A69002328FDC4BA00F591F8 /* StorageManagerTests.swift in Sources */,
 				9A69003228FEF7B900F591F8 /* DatabaseManagerTests.swift in Sources */,
 				9AA14FB328EEF9D3006A3BDF /* MockRegisterPresenter.swift in Sources */,
+				9AB96BEB29031D1800A3BB55 /* MockDatabaseManager.swift in Sources */,
 				9AA14FAF28EE64E6006A3BDF /* RegisterInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

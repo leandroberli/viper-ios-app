@@ -12,7 +12,7 @@ protocol SplashInteractorProtocol {
     var presenter: SplashPresenterProtocol? { get set }
     var firebaseAuth: FirebaseAuthProtocol? { get set }
     
-    func getAuthenticathedUser() -> User?
+    func getAuthenticathedUser() -> CustomUser?
 }
 
 class SplashInteractor: SplashInteractorProtocol {
@@ -23,7 +23,7 @@ class SplashInteractor: SplashInteractorProtocol {
         self.firebaseAuth = firebaseAuth
     }
     
-    func getAuthenticathedUser() -> User? {
+    func getAuthenticathedUser() -> CustomUser? {
         return firebaseAuth?.getAuthentincathedUser()
     }    
 }

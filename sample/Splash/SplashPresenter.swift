@@ -13,7 +13,7 @@ protocol SplashPresenterProtocol {
     var view: SplashViewProtocol? { get set }
     var router: SplashRouterProtocol? { get set }
     
-    func getAuthenticathedUser() -> User?
+    func getAuthenticathedUser() -> CustomUser?
     func startApp()
 }
 
@@ -41,7 +41,7 @@ class SplashPresenter: SplashPresenterProtocol {
         }
     }
     
-    func getAuthenticathedUser() -> User? {
+    func getAuthenticathedUser() -> CustomUser? {
         return self.interactor?.getAuthenticathedUser()
     }
 }

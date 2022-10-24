@@ -20,10 +20,6 @@ class EditProfileRouter: EditProfileRouterProtocol {
 
     weak var entry: EditProfileViewController?
     
-    init(){
-        
-    }
-    
     func initImagePickerViewController(delegate: UIImagePickerControllerDelegate & UINavigationControllerDelegate) {
         let picker = UIImagePickerController()
         picker.delegate = delegate

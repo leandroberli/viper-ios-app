@@ -11,23 +11,19 @@ import FirebaseAuth
 class RegisterInteractor: RegisterInteractorProtocol {
     
     var firebaseAuth: FirebaseAuthProtocol?
-    var dbManager: DatabaseManager?
+    var dbManager: DatabaseManagerProtocol?
     var presenter: RegisterPresenterProtocol?
     
-    init(authManager: FirebaseAuthProtocol, dbManager: DatabaseManager?) {
+    init(authManager: FirebaseAuthProtocol, dbManager: DatabaseManagerProtocol?) {
         self.firebaseAuth = authManager
         self.dbManager = dbManager
     }
     
-    //If firebase auth created, save basic data on user collection database.
+    //If firebase auth created, save basic data in user collection database.
     func registerNewUser(withEmail: String, password: String) {
         firebaseAuth?.createUser(withEmail: withEmail, password: password) { user, error in
             if let err = error {
                 self.presenter?.didFinishRegisterRequest(with: .failure(err))
-                return
-            }
-            guard let user = user else {
-                //Handle user nil
                 return
             }
             self.saveUserInDatabase(user: user)
@@ -35,12 +31,14 @@ class RegisterInteractor: RegisterInteractorProtocol {
         }
     }
     
-    func saveUserInDatabase(user: FirebaseAuth.User?) {
+    func saveUserInDatabase(user: CustomUser?) {
         guard let id = user?.uid, let email = user?.email else {
             return
         }
         let user = CustomUser(uid: id, email: email)
-        dbManager?.saveUser(withId: id, data: user)
+        dbManager?.saveUser(withId: id, data: user) { success in
+            
+        }
     }
 }
 

@@ -7,7 +7,16 @@
 
 import UIKit
 
-class EditProfileViewController: UIViewController {
+protocol EditProfileViewProtocol: AnyObject {
+    func updatePhotoProfile(_ image: UIImage?)
+    func updateUserInfo(_ user: CustomUser)
+    func showNativeAlertOnView(message: String, title: String)
+}
+
+class EditProfileViewController: UIViewController, EditProfileViewProtocol {
+    func showNativeAlertOnView(message: String, title: String) {
+        self.showSimpleNativeAlert(with: message, title: title)
+    }
     
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var nameTextfiled: BaseTextfield!

@@ -9,12 +9,13 @@ import Foundation
 import UIKit
 
 protocol EditProfilePresenterProtocol {
-    var view: EditProfileViewController? { get set }
-    var storageManager: StorageManager? { get set }
+    var view: EditProfileViewProtocol? { get set }
+    var storageManager: StorageManagerProtocol? { get set }
     var authManager: FirebaseAuthProtocol? { get set }
     var router: EditProfileRouterProtocol? { get set }
     var homeView: HomeViewController? { get set }
     
+    func didReceivedProfileImage(_ image: UIImage)
     func getUserProfilePhoto()
     func didSelectChangePhoto()
     func didSelectSave(name: String)
@@ -24,17 +25,17 @@ protocol EditProfilePresenterProtocol {
 
 //TODO: Create interactor.
 class EditProfilePresenter: NSObject, EditProfilePresenterProtocol {
-    var databaseManager: DatabaseManager?
-    var storageManager: StorageManager?
+    var databaseManager: DatabaseManagerProtocol?
+    var storageManager: StorageManagerProtocol?
     var authManager: FirebaseAuthProtocol?
-    weak var view: EditProfileViewController?
+    weak var view: EditProfileViewProtocol?
     weak var homeView: HomeViewController?
     var router: EditProfileRouterProtocol?
     var fromRegisterProcess = false
     
     let imageCompressionQlty = 0.7
     
-    init(storageManager: StorageManager, view: EditProfileViewController, authManager: FirebaseAuthProtocol, router: EditProfileRouterProtocol?, databaseManager: DatabaseManager) {
+    init(storageManager: StorageManagerProtocol, view: EditProfileViewProtocol, authManager: FirebaseAuthProtocol, router: EditProfileRouterProtocol?, databaseManager: DatabaseManagerProtocol) {
         super.init()
         
         self.databaseManager = databaseManager
@@ -69,14 +70,15 @@ class EditProfilePresenter: NSObject, EditProfilePresenterProtocol {
     
     //Save/update user in database.
     func saveUserData(name: String) {
-        guard let user = authManager?.getAuthentincathedUser(),
-              let email = user.email else {
+        guard let user = authManager?.getAuthentincathedUser() else {
             return
         }
-        var customUser = CustomUser(uid: user.uid, email: email)
+        var customUser = CustomUser(uid: user.uid, email: user.email)
         customUser.name = name.isEmpty ? nil : name
         homeView?.updateTopBarNameLabel("Hi, " + (customUser.name ?? "") + "!")
-        databaseManager?.saveUser(withId: customUser.uid, data: customUser)
+        databaseManager?.saveUser(withId: customUser.uid, data: customUser) { success in
+            
+        }
     }
     
     //Get user data and update form
@@ -125,17 +127,13 @@ extension EditProfilePresenter: UIImagePickerControllerDelegate, UINavigationCon
             } else {
                 DispatchQueue.main.async {
                     print(error?.localizedDescription ?? "")
-                    self.showNativeAlertOnView(message: error?.localizedDescription ?? "", title: "Error")
+                    self.view?.showNativeAlertOnView(message: error?.localizedDescription ?? "", title: "Error")
                     newImage = UIImage(systemName: "person.fill")!
                     self.view?.updatePhotoProfile(newImage)
                     self.homeView?.updateUserProfileImage(image: newImage)
                 }
             }
         }
-    }
-    
-    func showNativeAlertOnView(message: String, title: String) {
-        self.view?.showSimpleNativeAlert(with: message, title: title)
     }
 }
 
