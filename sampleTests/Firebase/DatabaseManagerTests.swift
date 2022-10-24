@@ -12,7 +12,7 @@ final class DatabaseManagerTests: XCTestCase {
     
     //Match with user id
     let existingID = "41AyJV24zHRS3xeU0CDsUtQl01S2"
-    let fakeID = ""
+    let fakeID = "1231"
     var sut: DatabaseManager!
 
     override func setUpWithError() throws {
@@ -23,10 +23,11 @@ final class DatabaseManagerTests: XCTestCase {
         sut = nil
     }
 
+    //Create ID or update existing
     func testSaveUserHappyPath() throws {
         let exp = self.expectation(description: "Success task")
         var user = CustomUser(uid: existingID, email: "lea@gmail.com")
-        user.name = "Test"
+        user.name = "From unit testing"
                                    
         sut.saveUser(withId: existingID, data: user) { success in
             exp.fulfill()
@@ -37,7 +38,6 @@ final class DatabaseManagerTests: XCTestCase {
     }
     
     //TODO: Sad path.
-    
     func testGetUserData_SuccessFlow() throws {
         let exp = self.expectation(description: "Get CustomUser object.")
         
@@ -52,7 +52,7 @@ final class DatabaseManagerTests: XCTestCase {
     func testGetUserData_WhenDoesntExistInDatabase() throws {
         let exp = self.expectation(description: "Get Error object.")
         
-        sut.getUser(withId: "41AyJV24zH3434RS3xeU0CDsUtQl01S2") { user, error in
+        sut.getUser(withId: fakeID) { user, error in
             exp.fulfill()
             XCTAssertNotNil(error)
         }
