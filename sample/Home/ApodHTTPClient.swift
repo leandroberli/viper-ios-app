@@ -29,8 +29,9 @@ class ApodHTTPClient: ApodHTTPClientProtocol {
                 completion(nil,err)
                 return
             }
-            if let data = data, let _ = String(data: data, encoding: .utf8) {
-                //print(string)
+            if let data = data, let s = String(data: data, encoding: .utf8) {
+                print(#function, "URLRequest: \(request.url!.absoluteURL)")
+                print(s)
                 do {
                     var post = try JSONDecoder().decode([Post].self, from: data)
                     post.removeAll(where:  { $0.url.contains(".gif")})
